@@ -1,0 +1,66 @@
+### SEO, Analytics & 3rd-party
+netlify_forms = false # add data-netlify attribute to contact and newsletter forms, false to disable Netlify forms
+# gtm_id = '' # GTM tracking (leave blank to use GA)
+disallow_search_engines = false # Disallow search engine crawling in robots.txt
+
+### Content
+favicon = true # Enable favicon, add your favicon files to /static/ directory
+avatar = 'avatar.png' # Custom avatar image in /assets/
+# avatar = 'ukant-cv.jpg' # Custom avatar image in /assets/
+grayscale_avatar = true # Add a grayscale filter to the avatar image
+author = 'Ukant Jadia' # Default author for <head> meta
+description = "Personal blog and portfolio site of Ukant Jadia." # Add a global meta description to <head>
+# footer_text = "Built with [Hugo Liftoff](https://github.com/wjh18/hugo-liftoff) theme." # Customize footer text
+fallback_text = "No content available yet. Coming soon." # Fallback text for empty content
+label_drafts = true # Add a label indicator next to the title of any built drafts (dev only)
+
+# Customize newsletter text
+newsletter_header = "This is my custom newsletter header with a captivating title."
+newsletter_description = "This is my custom newsletter description that tells you why you should sign up."
+newsletter_submit = "Join now"
+global_newsletter = false # Enable newsletter site-wide
+
+# CSS / JavaScript
+enable_postcss = false # Enable if you're using npm and want to utilize PostCSS processing
+custom_css = 'custom.css' # Add the specified file to assets before setting this param to avoid errors
+custom_js = 'custom.js' # Add the specified file to assets before setting this param to avoid errors
+
+### Web schemas
+# Open Graph
+images = ['images/default.png'] # Fallback for Open Graph and Twitter Cards images if none are present in front matter. Enter path to the image.
+ogLocale = "en_US" # Open graph locale
+
+# Twitter Cards
+twitterSite = "ukantjadia" # Enter your twitter handle without the @
+twitterCreator = "ukantjadia" # Enter your twitter handle without the @
+
+# JSON-LD structured data schemas
+schemaName = "ukant jadia" # Enter your name
+schemaLocale = "en-US" # Structured data locale
+schemaImage = "assets/avatar.png" # Image for Person structured data schema. Enter path to the image.
+schemaImageWidth = 453 # Width of the above image
+schemaImageHeight = 455 # Height of the above image
+
+### Social
+# Show social links in footer, home hero section, or about page
+footer_socials = true
+home_hero_socials = true
+about_page_socials = true
+
+# Enable or disable individual social icons
+[social.links]
+  twitter = "ukantjadia"
+  github = "ukantjadia"
+  stack_overflow = "userid/ukantjadia" # include user id
+  email = "ukantjadia0120@gmail.com"
+  linkedin = "ukantjadia" # Comment out to disable
+  # mastodon_server = "example.social" # include subdomains if relevant, scheme not needed (defaults to https)
+  # mastodon_user = "username" # don't include preceding @
+
+# Enable or disable individual social share icons in posts
+[social.share]
+  facebook = true
+  linkedin = true
+  twitter = true
+  reddit = true
+  email = true
