@@ -7,16 +7,7 @@
         Recent Posts
       {{- end -}}
     </h2>
-    <!-- <select name="choice" id="select-posts">
-      {{ range (where site.Sections "Section" "posts") }}
-      <option value="all-{{ .Name | lower }}" selected>All {{ .Name | lower }}</option>
-      {{ range .Sections }}
-      {{ if .CurrentSection.Pages }}
-      <option value="{{ replace .CurrentSection.RelPermalink "/" "" | lower }}">{{ .CurrentSection.Name }}</option>
-      {{ end }}
-      {{ end }}
-      {{ end }}
-    </select> -->
+
   </div>
   {{ $num := .Get 0 }}
   {{ if not $num }}
