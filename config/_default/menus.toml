@@ -20,6 +20,13 @@
     weight = 2
 
 [[main]]
+    identifier = "test"
+    name = "for tet"
+    url = "test-img.png"
+    # parent = "work"
+    weight = 2
+
+[[main]]
     identifier = "post"
     name = "Post"
     url = "/posts/"
