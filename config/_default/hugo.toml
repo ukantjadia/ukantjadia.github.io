@@ -9,7 +9,7 @@ title = 'Ukant Jadia' # Site title used throughout site
 enableRobotsTXT = true # To overwrite the theme's robots.txt, add your own in the /layouts/ directory
 rssLimit = -1 # -1 is unlimited RSS entries
 # googleAnalytics = '' # Enter GA tracking ID to enable GA4
-disqusShortname = 'ukantjadia' # Enter Disqus shortname to enable comments
+disqusShortname = 'ukant-tech' # Enter Disqus shortname to enable comments
 
 ### Content & Publishing
 # Please see https://gohugo.io/getting-started/configuration/ for detailed explanations
