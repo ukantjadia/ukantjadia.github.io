@@ -51,7 +51,7 @@ about_page_socials = true
 [social.links]
   twitter = "ukantjadia"
   github = "ukantjadia"
-  stack_overflow = "userid/ukantjadia" # include user id
+  stack_overflow = "19734995/ukant" # include user id
   email = "ukantjadia0120@gmail.com"
   linkedin = "ukantjadia" # Comment out to disable
   # mastodon_server = "example.social" # include subdomains if relevant, scheme not needed (defaults to https)
