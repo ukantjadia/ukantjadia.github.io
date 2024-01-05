@@ -26,6 +26,7 @@ description: Let me tell you more about myself
     </style> -->
 
 
+ <img src="./assets/ukant-cv.jpg" alt="Example Image" width="300" height="350" align="right">
 
 I'm a fast learner who loves exploring data and turning it into clear stories.
 <br>
@@ -37,16 +38,11 @@ My goal is to grow as a Data Scientist/Machine Learning Engineer in a stable com
 I'm a hard worker who thrives under pressure, using tools like stats and programming to get results. Plus, I'm great at talking to people to ensure everyone's on the same page.
 
 <!-- </div>
-
  <div class="im-image">
-
 <div class="image-container">
- <img src="ukant-cv.jpg" alt="Example Image" width="300" height="350" align="center">
  </div>
-
 </div>
 </div>
-
 <div style="text-align: center;
             margin: auto;
             width: 50%; /* Adjust the width as needed */
