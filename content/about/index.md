@@ -65,11 +65,12 @@ I'm a hard worker who thrives under pressure, using tools like stats and program
 
 <div style="text-align: center;
             margin: auto;
-            width: 50%; /* Adjust the width as needed */
+            width: 55%; /* Adjust the width as needed */
             padding: 20px;
             /* border: 1px solid #ccc; */
             ">
-Ready to unlock the power of data together? Let's team up!
+<!-- Ready to unlock the power of data together? Let's team up! -->
+ Let's Connect, I believe You are You<sup>You</sup>, So <br> You<sup>You</sup> &nbsp; * &nbsp;  Me<sup>Me</sup>  &nbsp; =   &nbsp; Do<sup>Impossible</sup>
 </div>
 {{< /rawhtml >}}
 
