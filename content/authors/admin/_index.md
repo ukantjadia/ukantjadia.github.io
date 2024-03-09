@@ -3,21 +3,21 @@
 title: Ukant Jadia
 
 # Name pronunciation (optional)
-name_pronunciation: Ukant Jadia
+name_pronunciation: 
 
 # Full name (for SEO)
 first_name: Ukant
 last_name: Jadia
 
 # Status emoji
-status:
+status: 
   icon: ☕️
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: ML Engineer & Software Engineer 
+role: Graduate | ML & Software Engineer 
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -25,7 +25,7 @@ organizations:
     url: https://www.spsu.ac.in/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include applied machine learning, visualization, programming the boring stuff.
+bio: My research interests include applied machine learning, visualization, programming boring stuff.
 
 # Interests to show in About widget
 interests:
@@ -130,7 +130,7 @@ social:
     link: uploads/resume.pdf
 
 # Highlight the author in author lists? (true/false)
-highlight_name: true
+highlight_name: false
 ---
 
 I'm a fast learner who loves exploring data and turning it into clear stories. My goal is to grow as a Data Scientist/Machine Learning Engineer in a stable company where I can contribute with my skills and dedication. I'm a hard worker who thrives under pressure, using tools like stats and programming to get results. Plus, I'm great at talking to people to ensure everyone's on the same page. 
