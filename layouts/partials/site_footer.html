@@ -15,9 +15,20 @@
       {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; {{ end }}
   
       Powered by the
-      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-  
+      <!-- <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>. -->
+        
+
+      <!-- <p class="footer-copyright"> -->
+        &copy; {{ now.Format "2006" }} &middot; 
+        <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        {{ with .Site.Params.footer_text | markdownify }}
+          <span>&middot; {{ . }}</span>
+        {{ end }}
+      <!-- </p> -->
+
+
+
       <!-- {{ if ne .Type "docs" }}
       <span class="float-right" aria-hidden="true">
         <a href="#" id="back_to_top">
