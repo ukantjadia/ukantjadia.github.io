@@ -18,7 +18,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'Personal blog and portfolio site of Ukant Jadia | Hello , I'm Ukant Jadia. Software Engineer | Machine Learning Enthusiast | Flutter Developer.'
+    description: 'A highly-customizable Hugo academic resume theme powered by Hugo Blox Builder.'
     twitter: 'ukantjadia'
   analytics:
     google_analytics: ''
