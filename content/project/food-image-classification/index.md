@@ -21,7 +21,7 @@ links:
   - icon: linkedin
     icon_pack: fab
     name: Connect
-    link: https://www.linkedin.com/in/ukantjadia    
+    link: 'https://www.linkedin.com/in/ukantjadia' 
   - icon: linkedin
     icon_pack: fab
     name: Follow

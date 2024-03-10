@@ -19,7 +19,7 @@ links:
   - icon: linkedin
     icon_pack: fab
     name: Follow
-    link: https://www.linkedin.com/in/ukantjadia
+    link: 'https://www.linkedin.com/in/ukantjadia' 
 url_code: 'https://github.com/ukantjadia/Loan-Prediction-Application'
 url_pdf: 'https://github.com/ukantjadia/Loan-Prediction-Application/blob/Main/Report/Loan-Prediction-Report.pdf'
 url_slides: ''
