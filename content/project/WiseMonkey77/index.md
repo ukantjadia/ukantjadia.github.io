@@ -17,6 +17,10 @@ image:
   focal_point: Smart
 
 links:
+  - icon: linkedin
+    icon_pack: fab
+    name: Connect
+    link: https://www.linkedin.com/in/ukantjadia    
   - icon: twitter
     icon_pack: fab
     name: WiseMonkey77

@@ -23,7 +23,7 @@ links:
     url: https://twitter.com/ukantjadia
   - icon: linkedin
     icon_pack: fab
-    name: Follow
+    name: Connect
     link: https://www.linkedin.com/in/ukantjadia
 
 url_code: 'https://github.com/ukantjadia/TravelTalesAI'

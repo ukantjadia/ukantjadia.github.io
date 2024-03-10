@@ -16,10 +16,10 @@ image:
   focal_point: Smart
 
 links:
-  - icon: twitter
+  - icon: linkedin
     icon_pack: fab
     name: Follow
-    url: https://twitter.com/ukantjadia
+    link: https://www.linkedin.com/in/ukantjadia
 url_code: 'https://github.com/ukantjadia/Loan-Prediction-Application'
 url_pdf: 'https://github.com/ukantjadia/Loan-Prediction-Application/blob/Main/Report/Loan-Prediction-Report.pdf'
 url_slides: ''
