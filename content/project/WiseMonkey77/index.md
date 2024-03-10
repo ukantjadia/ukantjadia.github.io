@@ -21,6 +21,10 @@ links:
     icon_pack: fab
     name: WiseMonkey77
     url: https://twitter.com/WiseMonkey77
+  - icon: twitter
+    icon_pack: fab
+    name: Follow
+    url: https://twitter.com/ukantjadia
   - icon: linkedin
     icon_pack: fab
     name: Connect
