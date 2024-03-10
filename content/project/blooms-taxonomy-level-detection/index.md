@@ -26,7 +26,7 @@ links:
   - icon: linkedin
     icon_pack: fab
     name: Connect
-    link: 'https://www.linkedin.com/in/ukantjadia' 
+    url: 'https://www.linkedin.com/in/ukantjadia' 
 url_code: 'https://github.com/ukantjadia/Boolm-s-Level-Detection-A-MLOPS-Project'
 url_pdf: ''
 url_slides: ''

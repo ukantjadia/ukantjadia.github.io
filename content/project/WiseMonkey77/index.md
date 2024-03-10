@@ -17,14 +17,14 @@ image:
   focal_point: Smart
 
 links:
-  - icon: linkedin
-    icon_pack: fab
-    name: Connect
-    link: 'https://www.linkedin.com/in/ukantjadia'
   - icon: twitter
     icon_pack: fab
     name: WiseMonkey77
     url: https://twitter.com/WiseMonkey77
+  - icon: linkedin
+    icon_pack: fab
+    name: Connect
+    url: 'https://www.linkedin.com/in/ukantjadia'
 url_code: 'https://github.com/ukantjadia/WiseMonkey77'
 url_pdf: ''
 url_slides: ''

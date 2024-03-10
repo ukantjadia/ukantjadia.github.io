@@ -20,11 +20,11 @@ links:
   - icon: linkedin
     icon_pack: fab
     name: Connect
-    link: 'https://www.linkedin.com/in/ukantjadia' 
+    url: 'https://www.linkedin.com/in/ukantjadia' 
   - icon: linkedin
     icon_pack: fab
     name: Follow
-    link: https://www.linkedin.com/in/ukantjadia
+    url: https://www.linkedin.com/in/ukantjadia
 url_code: 'https://github.com/ukantjadia/Heart-Disease-Classification-with-Electrocardiogram'
 url_pdf: ''
 url_slides: ''

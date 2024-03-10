@@ -24,7 +24,7 @@ links:
   - icon: linkedin
     icon_pack: fab
     name: Connect
-    link: 'https://www.linkedin.com/in/ukantjadia'
+    url: 'https://www.linkedin.com/in/ukantjadia'
 
 url_code: 'https://github.com/ukantjadia/TravelTalesAI'
 url_pdf: ''
