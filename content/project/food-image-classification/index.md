@@ -5,6 +5,7 @@ tags:
   - Image Processing
   - MLOps
   - Docker
+  - Classification
 date: '2024-01-01T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
