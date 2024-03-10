@@ -220,7 +220,7 @@ sections:
         - name: All
           tag: '*'
         - name: Research Project
-          tag: Research Project
+          tag: Research Paper
         - name: Data Analysis
           tag: EDA
         - name: Classification
@@ -232,7 +232,7 @@ sections:
       columns: '1' 
       view: showcase
       # For Showcase view, flip alternate rows?
-      flip_alt_rows: false
+      flip_alt_rows: ture
   - block: markdown
     content:
       title: Gallery
