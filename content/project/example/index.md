@@ -11,7 +11,7 @@ external_link: ''
 draft: true
 
 image:
-  caption: Photo by rawpixel on Unsplash
+  caption: Photo by raw pixel on Unsplash
   focal_point: Smart
 
 links:
