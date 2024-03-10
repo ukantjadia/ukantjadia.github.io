@@ -1,6 +1,6 @@
 ---
-title: Heart Disease Classification with Electrocardiogram
-summary: Classifying ECG data into 5 super-classes 
+title: Image Manipulation using OpenCV
+summary: Implemented core concept of image manipulation 
 tags:
   - Image Processing
   - OpenCV

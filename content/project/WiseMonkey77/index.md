@@ -1,6 +1,6 @@
 ---
-title: Heart Disease Classification with Electrocardiogram
-summary: Classifying ECG data into 5 super-classes 
+title: A Twitter Bot- WiseMonkey77
+summary: A twitter bot to automate the tweet in each 24 hrs 
 tags:
   - Bot
   - Linux
@@ -47,3 +47,4 @@ The automated posting is done due to the cron jobs in the Linux OS.
 ![1710056367827](image/index/1710056367827.png)
 
 ![1710056397878](image/index/1710056397878.png)
+![1710057592649](image/index/1710057592649.png)
