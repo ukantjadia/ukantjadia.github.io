@@ -221,6 +221,8 @@ sections:
           tag: '*'
         - name: Research Project
           tag: Research Paper
+        - name: MLOps
+          tag: MLOps
         - name: Data Analysis
           tag: EDA
         - name: Classification
