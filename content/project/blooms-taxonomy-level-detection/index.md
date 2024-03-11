@@ -40,7 +40,14 @@ url_video: ''
 # slides: example
 ---
 
+
+For using this project here is a Streamlit app URL(it will take some time to launch) [https://ukant.tech/Boolm-s-Level-Detection-A-MLOPS-Project/]
+
+To know Bloom's Taxonomy in Detail see this pdf [This](uploads/blooms-level.pdf)
+
 This project aims to classify the given statement into accurate Bloom's taxonomy levels out of six levels. This is an NLP-based project. This project is built with TF-IDF vectorizer and multinomial Naive Bayes techniques. 
+
+**Bloom's Taxonomy Levels**: Bloom’s Taxonomy is a classification system that arranges learning objectives into six hierarchical levels, each representing a different cognitive skill.
 
 The model is trained on 1800 augmented statements. Initially, I had 100 statements for each class, so a total of 600 statements for six classes. Then, this data is augmented three times using contextual word embedding augmentation, and the model used in the augmentation is BERT-based. An example of the augmentation methodology is inserted below
 
