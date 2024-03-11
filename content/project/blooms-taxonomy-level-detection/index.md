@@ -43,7 +43,7 @@ url_video: ''
 
 For using this project here is a Streamlit app URL(it will take some time to launch) [https://ukant.tech/Boolm-s-Level-Detection-A-MLOPS-Project/]
 
-To know Bloom's Taxonomy in Detail see this pdf [This](uploads/blooms-level.pdf)
+To know Bloom's Taxonomy in Detail see this pdf [This](./blooms-level.pdf)
 
 This project aims to classify the given statement into accurate Bloom's taxonomy levels out of six levels. This is an NLP-based project. This project is built with TF-IDF vectorizer and multinomial Naive Bayes techniques. 
 
