@@ -58,9 +58,8 @@ In today's tough business world, companies need useful insights to grow and make
 
 <div>
   <iframe id="inlineFrameExample"
-      title="Inline Frame Example"
-      width="90%"
-      height="70%"
+      title="Analysis Notebook"
+
       src="https://ukant.tech/Retail-Data-Analysis/">
   </iframe>
 </div>
