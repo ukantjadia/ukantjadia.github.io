@@ -1,6 +1,6 @@
 ---
 title: Exploratory Data Analysis - COVID-19 Data
-summary: Classifying ECG data into 5 super-classes 
+summary: Doing EDA on India geographical dataset of COVID-19
 tags:
   - Demo
   - EDA

@@ -133,5 +133,5 @@ social:
 highlight_name: false
 ---
 
-I'm a fast learner who loves exploring data and turning it into clear stories. My goal is to grow as a Data Scientist/Machine Learning Engineer in a stable company where I can contribute with my skills and dedication. I'm a hard worker who thrives under pressure, using tools like stats and programming to get results. Plus, I'm great at talking to people to ensure everyone's on the same page. 
+I'm a fast learner who loves exploring data and turning it into clear stories. My goal is to grow as a Data Scientist/Machine Learning Engineer in a stable company where I can contribute with my skills and dedication. I'm a hard worker who thrives under pressure, using tools like stats and programming to get results. Plus, I'm great at talking to people to ensure everyone's on the same page.
 {style="text-align: justify;"}
