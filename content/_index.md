@@ -107,7 +107,7 @@ sections:
         #       * Analysing
         #       * Modelling
         #       * Deploying
-        - title: Flutter Developer, Intern
+        - title: Software Engineer Intern
           company: Cognus Technology
           company_url: 'https://www.cognustechnology.com/'
           company_logo: ''
@@ -115,9 +115,10 @@ sections:
           date_start: '2023-05-22'
           date_end: '2022-08-21'
           description: |2-
-            * Contributed to live project Gradding, and developed dynamic onboarding for the App.
-            * Designed and developed dynamic and responsive Pocket App using **Flutter**,**Dart**,**Figma**.
-            * Conducted research on other applications and made process **25%** more efficient.
+            * Contributed to live project Gradding using **Flutter**, **Dart**, and **Figma**.
+            * Designed intuitive onboarding with **questionnaires** and document uploads, **handling return cases** seamlessly.
+            * Conducted in-depth market research on competing applications, analyzing **features** and **identifying gaps** to
+ streamline onboarding app development by **25%**.
     design:
       columns: '2'
   - block: accomplishments
