@@ -160,7 +160,7 @@ sections:
           description: Analyse and interpret the large data and apply Machine learning
           icon_pack: custom
           icon: ibm
-          organization: internshala
+          organization: Internshala
           organization_url: https://trainings.internshala.com/
           title: Data Science
           url: https://trainings.internshala.com/data-science-beginner-course/?tracking_source=trainings-search-dropdown
