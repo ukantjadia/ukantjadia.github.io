@@ -117,8 +117,7 @@ sections:
           description: |2-
             * Contributed to live project Gradding using **Flutter**, **Dart**, and **Figma**.
             * Designed intuitive onboarding with **questionnaires** and document uploads, **handling return cases** seamlessly.
-            * Conducted in-depth market research on competing applications, analyzing **features** and **identifying gaps** to
- streamline onboarding app development by **25%**.
+            * Conducted in-depth market research on competing applications, analyzing **features** and **identifying gaps** to streamline onboarding app development by **25%**.
     design:
       columns: '2'
   - block: accomplishments
