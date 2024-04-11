@@ -107,7 +107,7 @@ sections:
         #       * Analysing
         #       * Modelling
         #       * Deploying
-        - title: Software Engineer Intern
+        - title: SWE Intern
           company: Cognus Technology
           company_url: 'https://www.cognustechnology.com/'
           company_logo: ''
