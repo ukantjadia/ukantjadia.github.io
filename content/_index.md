@@ -142,6 +142,16 @@ sections:
           organization_url: https://www.cloudskillsboost.google/
           title: 'Career Readiness - Associate Cloud Engineer Path'
           url: 'https://www.cloudskillsboost.google/paths/51'
+          
+        - certificate_url: uploads/power_bi.pdf
+          date_end: '2024-03-19'
+          date_start: '2024-02-29'
+          description: ''
+          icon: custom/ibm
+          organization: _VOIS
+          organization_url: https://voisfortech.com/course/
+          title: ' Power BI for Data Analysis'
+          url: 'https://voisfortech.com/course/index.php?categoryid=60'
 
         - certificate_url: uploads/automate-python.pdf
           date_end: '2024-01-15'
