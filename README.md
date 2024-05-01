@@ -26,7 +26,8 @@ description: Let me tell you more about myself
     </style> -->
 
 
- <img src="./assets/ukant-cv.jpg" alt="Example Image" width="300" height="350" align="right">
+ <img src="./assets/readme.png" alt="ukant jadia" align="right">
+ <!-- <img src="./assets/readme.png" alt="Example Image" width="300" height="350" align="right"> -->
 
 I'm a fast learner who loves exploring data and turning it into clear stories.
 <br>
