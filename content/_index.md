@@ -142,7 +142,7 @@ sections:
           organization_url: https://www.cloudskillsboost.google/
           title: 'Career Readiness - Associate Cloud Engineer Path'
           url: 'https://www.cloudskillsboost.google/paths/51'
-          
+
         - certificate_url: uploads/power_bi.pdf
           date_end: '2024-03-19'
           date_start: '2024-02-29'
@@ -310,9 +310,9 @@ sections:
       title: Contact
       subtitle:
       text: |-
-        Please do not hesitate to contact me.
+        Hey! let's build something together.
       # Contact (add or remove contact options as necessary)
-      email: ukant.chippa@gmail.com
+      email: jadia.ukant@gmail.com
       phone: +91 637 758 1234
       # appointment_url: 'https://calendly.com'
       address:

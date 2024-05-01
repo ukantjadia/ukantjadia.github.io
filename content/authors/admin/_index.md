@@ -103,7 +103,7 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: '/#contact'
+    link: 'mailto:jadia.ukant@gmail.com'
     
   - icon: twitter
     icon_pack: fab
