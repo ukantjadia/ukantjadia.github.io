@@ -133,6 +133,16 @@ sections:
       #   Leave other parameters empty if not required.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - certificate_url: uploads/gcp_cert.pdf
+          date_end: '2024-02-19'
+          date_start: '2024-05-29'
+          description: ''
+          icon: custom/ibm
+          organization: Google
+          organization_url: https://www.cloudskillsboost.google/
+          title: 'Career Readiness - Associate Cloud Engineer Path'
+          url: 'https://www.cloudskillsboost.google/paths/51'
+          
         - certificate_url: uploads/automate-python.pdf
           date_end: '2024-01-15'
           date_start: '2023-12-10'
