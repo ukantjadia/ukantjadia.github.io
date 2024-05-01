@@ -27,7 +27,7 @@ description: Let me tell you more about myself
 
 
  <!-- <img src="./assets/readme.png" alt="ukant jadia" align="right"> -->
- <img src="./assets/readme.png" alt="ukant jadia" width="300" height="350" align="right">
+ <img src="./assets/readme.png" alt="ukant jadia" width="350" height="350" align="right">
 
 I'm a fast learner who loves exploring data and turning it into clear stories.
 <br>
