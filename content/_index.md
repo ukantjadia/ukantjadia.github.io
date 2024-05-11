@@ -313,7 +313,7 @@ sections:
         Hey! let's build something together.
       # Contact (add or remove contact options as necessary)
       email: jadia.ukant@gmail.com
-      phone: +91 637 758 1234
+      # phone: +91 637 758 1234
       # appointment_url: 'https://calendly.com'
       address:
         street: 25-B Raghunathpura
