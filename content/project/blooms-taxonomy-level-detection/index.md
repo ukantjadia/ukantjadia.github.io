@@ -27,7 +27,7 @@ links:
     icon_pack: fab
     name: Connect
     url: 'https://www.linkedin.com/in/ukantjadia' 
-url_code: ''
+url_code: 'https://github.com/ukantjadia/Boolm-s-Level-Detection-A-MLOPS-Project/'
 url_pdf: ''
 url_slides: ''
 url_video: ''
@@ -67,7 +67,7 @@ This project follows MLOps techniques well. I have divided this project into 6 d
 
 In the end, I created a Docker image so it can be used by the Higher Education Institute(HEIs) for those who are using the OBE(Object Based Education) new curriculum technique. It just reduced the manual process of identifying each question and its root taxonomy level.
 
-<!-- ![1710044827297](image/index/1710044827297.png) -->
+![1710044827297](image/index/1710044827297.png)
 
 
 ![1710044894646](image/index/1710044894646.png)
