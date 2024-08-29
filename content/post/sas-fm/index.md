@@ -48,6 +48,7 @@ Recently SAS also did a survey by sending 22 questions to its member all over th
 Here are the ways you can explore the report, first A visually appeling [dashboard](https://tbub.engage.sas.com/SASVisualAnalytics/?reportUri=%2Freports%2Freports%2Fdd662d82-6890-4f17-9cfe-43251c355543&sso_guest=true&printEnabled=false&shareEnabled=false&informationEnabled=false&commentsEnabled=false&alertsEnabled=false&reportViewOnly=true&reportContextBar=false&sas-welcome=false) and second complete report with a login [report](https://www.sas.com/en_us/offers/24q1/anti-fraud-technology.html).
 
 here is a screen shot of showing the uses of analytics tools in banking and finance services for fraud detection
+
 ![Report Dashboard](image\img2.jpg)
 
 ## Real-World Examples of Fraud Detection
