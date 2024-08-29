@@ -24,6 +24,7 @@ featured: true
 The issue of fraud has always presented challenges, but in today's digital age, it has grown more complex and sophisticated. Fraudsters are continuously devising new methods to exploit systems and pilfer valuable resources, especially in sectors such as banking, retail, subscription fraud, and credit card fraud. However, technology is pushing back with great force. I recently watched a talk presentation by Varun Mehta, a renowned fraud prevention expert from SAS Middle East, where he shed light on how advanced analytics, artificial intelligence (AI), and machine learning (ML) are revolutionizing the battle against fraud.
 
 In this post, I will guide you through the main ideas of Varun’s speech, explaining how SAS's creative tools are aiding companies worldwide in identifying and stopping fraud with greater efficiency. If you work in finance, healthcare, or any sector susceptible to fraudulent behavior, the information from this talk could be extremely beneficial in fortifying your security measures.
+![Report_Dashboard](image\img2.jpg)
 
 ## Introduction to SAS and Their Role in Fraud Detection
 
@@ -42,7 +43,7 @@ Varun Mehta presented a detailed overview of the SAS Fraud Platform, which is a 
 
 2. *Real-Time Detection*: Its real-time fraud detection capability is a game-changer as it can swiftly identify and prevent fraudulent activities, safeguarding organizations from significant financial losses.
 
-3. *Advanced Analytics and Machine Learning*: Through advanced analytics and machine learning, the platform can uncover unnoticed fraud by examining extensive data and identifying irregular patterns. This includes identifying suspicious banking transactions and uncovering procurement fraud involving ghost vendors and duplicate invoices.
+1. *Advanced Analytics and Machine Learning*: Through advanced analytics and machine learning, the platform can uncover unnoticed fraud by examining extensive data and identifying irregular patterns. This includes identifying suspicious banking transactions and uncovering procurement fraud involving ghost vendors and duplicate invoices.
 
 Recently SAS also did a survey by sending 22 questions to its member all over the world for asking about their organization's anti-fraud initiatives.
 Here are the ways you can explore the report, first A visually appeling [dashboard](https://tbub.engage.sas.com/SASVisualAnalytics/?reportUri=%2Freports%2Freports%2Fdd662d82-6890-4f17-9cfe-43251c355543&sso_guest=true&printEnabled=false&shareEnabled=false&informationEnabled=false&commentsEnabled=false&alertsEnabled=false&reportViewOnly=true&reportContextBar=false&sas-welcome=false) and second complete report with a login [report](https://www.sas.com/en_us/offers/24q1/anti-fraud-technology.html).
