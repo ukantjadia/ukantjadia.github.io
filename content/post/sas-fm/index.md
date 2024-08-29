@@ -49,7 +49,7 @@ Here are the ways you can explore the report, first A visually appeling [dashboa
 
 here is a screen shot of showing the uses of analytics tools in banking and finance services for fraud detection
 
-![Report Dashboard](image/img2.jpg)
+![Report Dashboard](image/img.jpg)
 
 ## Real-World Examples of Fraud Detection
 
