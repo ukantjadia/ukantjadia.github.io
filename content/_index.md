@@ -96,7 +96,7 @@ sections:
       items:
         - title: Data Science Intern
           company: Mente Consultancies
-          company_url: ''
+          company_url: 'https://www.linkedin.com/company/mente-consultancies/'
           company_logo: ''
           location: Delhi
           date_start: '2024-07-22'
