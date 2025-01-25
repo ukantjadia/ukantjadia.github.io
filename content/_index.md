@@ -94,26 +94,26 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        # - title: CEO
-        #   company: GenCoin
-        #   company_url: ''
-        #   company_logo: org-gc
-        #   location: California
-        #   date_start: '2021-01-01'
-        #   date_end: ''
-        #   description: |2-
-        #       Responsibilities include:
-
-        #       * Analysing
-        #       * Modelling
-        #       * Deploying
+        - title: Data Science Intern
+          company: Mente Consultancies
+          company_url: ''
+          company_logo: ''
+          location: Delhi
+          date_start: '2024-07-22'
+          date_end: '2025-01-22'
+          description: |2-
+              * Designed Python-based systems for rolling feature updates, signature storage, and real-time predictions without database dependency.
+              * Built Calendar and Rebase Marts in SAS to restructure time-series data, address seasonality, and ensure data quality.
+              * Developed statistical variables and pipelines in SAS Viya for machine learning models, enabling robust predictions.
+              * Created SAS Visual Analytics dashboards to monitor model performance and data drifts.
+              
         - title: SWE Intern
           company: Cognus Technology
           company_url: 'https://www.cognustechnology.com/'
           company_logo: ''
           location: Udaipur
           date_start: '2023-05-22'
-          date_end: '2022-08-21'
+          date_end: '2023-08-22'
           description: |2-
             * Contributed to live project Gradding using **Flutter**, **Dart**, and **Figma**.
             * Designed intuitive onboarding with **questionnaires** and document uploads, **handling return cases** seamlessly.
