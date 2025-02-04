@@ -48,6 +48,9 @@ sections:
   #   content:
   #     title: Skills
   #     text: ''
+
+
+
   #     # Choose a user to display skills from (a folder name within `content/authors/`)
   #     username: admin
   #   design:
@@ -57,12 +60,12 @@ sections:
       title: Skills
       items:
       - name: Languages
-        description: Python, C/C++, Dart, Bash/Shell, Java
+        description: Python, C/C++, Dart, Shell, Java
         # percent: 75
         icon:   language
         icon_pack: custom
       - name: Frameworks/Library
-        description: Flutter, Flask, Tensorflow, Requests, imutils
+        description: Flutter, Flask, Tensorflow
         # percent: 70
         icon: framework
         icon_pack: custom
@@ -71,13 +74,13 @@ sections:
         # percent: 70
         icon: database
         icon_pack: custom
-      - name: Tools/Platform 
+      - name: Tools/Platform
         description: Vim, Git, Linux, Docker, MLFlow, PowerBI
         # percent: 80
         icon: platform
         icon_pack: custom
       - name: Miscellaneous
-        description: Statistics, Supervised/Unsupervised Learning, Deep Learning, EDA/ETL, AWS/Azure
+        description: Statistics, Deep Learning, AWS/Azure
         # percent: 70
         icon: miscellaneous
         icon_pack: custom
@@ -106,7 +109,7 @@ sections:
               * Built Calendar and Rebase Marts in SAS to restructure time-series data, address seasonality, and ensure data quality.
               * Developed statistical variables and pipelines in SAS Viya for machine learning models, enabling robust predictions.
               * Created SAS Visual Analytics dashboards to monitor model performance and data drifts.
-              
+
         - title: SWE Intern
           company: Cognus Technology
           company_url: 'https://www.cognustechnology.com/'
@@ -247,12 +250,12 @@ sections:
         - name: Data Analysis
           tag: EDA
         - name: Classification
-          tag: Classification          
+          tag: Classification
         - name: Other
           tag: Demo
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
-      columns: '2' 
+      columns: '2'
       view: showcase
       # For Showcase view, flip alternate rows?
       flip_alt_rows: false
@@ -329,7 +332,7 @@ sections:
       # Choose a map provider in `params.yaml` to show a map from these coordinates
       coordinates:
         latitude: '24.6098491'
-        longitude: '73.7343402'  
+        longitude: '73.7343402'
       contact_links:
         - icon: twitter
           icon_pack: fab
