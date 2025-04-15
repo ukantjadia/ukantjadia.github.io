@@ -1,33 +1,7 @@
 ---
 title: A Beginner's Guide to DevOps with Terraform and GitHub
-subtitle: Learn how to set up a CI/CD pipeline using GitHub Actions and Terraform
+# subtitle: Learn how to set up a CI/CD pipeline using GitHub Actions and Terraform
 summary: This post introduces the foundational concepts of DevOps and provides hands-on experience using GitHub and Terraform to build a CI/CD pipeline.
-# description: A practical walkthrough for beginners to understand DevOps workflows using Terraform and GitHub Actions.
-# slug: beginner-devops-terraform-github
-# authors:
-#   - Ukant Jadia
-
-draft: false
-date: 2024-12-30T14:15:59+05:30
-lastmod:
-
-featured: true
-projects: []
-
-
-# Show this page in the Featured widget?
-featured: false
-
-image:
-  caption: '**Ukant Jadia** (image.png)'
-  focal_point: ''
-  placement: 2
-  preview_only: false
-
-
-categories:
-  - DevOps
-  - Version Control System-VCS
 
 tags:
   - DevOps
@@ -39,10 +13,45 @@ tags:
   - Infrastructure as Code
   - GitHub Actions
   - Linux
+  -
+date: 2024-12-30T14:15:59+05:30
+# description: A practical walkthrough for beginners to understand DevOps workflows using Terraform and GitHub Actions.
+# slug: beginner-devops-terraform-github
+# authors:
+#   - Ukant Jadia
+external_link:
+
+draft: false
+image:
+  caption: '**Ukant Jadia** (image.png)'
+  focal_point: ''
+  placement: 2
+  preview_only: false
+
+
+links:
+  - icon: twitter
+    icon_pack: fab
+    name: Follow
+    url: https://twitter.com/ukantjadia
+  - icon: linkedin
+    icon_pack: fab
+    name: Connect
+    url: 'https://www.linkedin.com/in/ukantjadia'
+url_code: 'https://github.com/ukantjadia/devops-qr-code'
+
+url_pdf: ''
+url_slides: ''
+url_video: ''
+
+
+categories:
+  - DevOps
+  - Version Control System-VCS
+
 ---
 
-
-"# A Beginner's Guide to DevOps with Terraform and GitHub
+# A Beginner's Guide to DevOps with Terraform and GitHub
 
 As a fresh graduate in Computer Science and Engineering, my exploration into the world of DevOps has been nothing short of an enlightening adventure. Coming from a machine learning background, I often found myself compelled to understand how backend systems could be crafted with such elegance. This curiosity fueled my capstone project, where I aimed to create a CI/CD pipeline that elegantly demonstrated the power of tools like Terraform and GitHub.
 
@@ -144,7 +153,8 @@ jobs:
 
 To visualize how data flows through the different stages of the pipeline, I employed Eraser.io. This tool allowed me to create flowcharts that represented the overall CI/CD process from code push to deployment.
 
-![Project Workflow Diagram](image/intro/images.png)
+![Project Workflow Diagram](image/intro/image.png)
+
 *Figure 1: The flow of code and data in the CI/CD pipeline*
 
 ## The Elegance of CI/CD: A Real-World Application
@@ -167,4 +177,4 @@ Reflecting on this project, I can confidently say that building a CI/CD pipeline
 3. [GitHub Task Documentation](https://github.com/ukantjadia/devops-qr-code/blob/Main/task.md)
 4. [GitHub README Documentation](https://github.com/ukantjadia/devops-qr-code/blob/Main/README.md)
 
-*Feel free to explore these resources further to expand your knowledge and understanding of DevOps and CI/CD pipelines.*"
+*Feel free to explore these resources further to expand your knowledge and understanding of DevOps and CI/CD pipelines.*
