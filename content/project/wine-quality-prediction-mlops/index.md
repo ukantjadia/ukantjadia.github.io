@@ -1,9 +1,9 @@
 ---
 title: A MLOps Project- Wine Quality Prediction
-summary: A project implemented using MLOps techniques and procedure 
+summary: A project implemented using MLOps techniques and procedure
 tags:
   - MLOps
-  - Demo
+  - DevOps
   - Prediction
 date: '2023-12-08T00:00:00Z'
 

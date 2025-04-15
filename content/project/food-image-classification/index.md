@@ -1,9 +1,10 @@
 ---
 title: Food Image Classification
-summary: A project with MLOps approach - Classifying between food and non-food image 
+summary: A project with MLOps approach - Classifying between food and non-food image
 tags:
   - Image Processing
   - MLOps
+  - DevOps
   - Docker
   - Classification
 date: '2024-01-01T00:00:00Z'
@@ -25,7 +26,7 @@ links:
   - icon: linkedin
     icon_pack: fab
     name: Connect
-    url: 'https://www.linkedin.com/in/ukantjadia' 
+    url: 'https://www.linkedin.com/in/ukantjadia'
 url_code: ''
 url_pdf: ''
 url_slides: ''
