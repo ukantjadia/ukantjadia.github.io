@@ -234,7 +234,7 @@ sections:
         folders:
           - project
       # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
-      default_button_index: 1
+      default_button_index: 0
       # Filter toolbar (optional).
       # Add or remove as many filters (`filter_button` instances) as you like.
       # To show all items, set `tag` to "*".
@@ -251,6 +251,8 @@ sections:
           tag: EDA
         - name: Classification
           tag: Classification
+        - name: DevOps
+          tag: DevOps
         - name: Other
           tag: Demo
     design:

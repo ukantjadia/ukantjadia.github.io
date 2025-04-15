@@ -4,6 +4,7 @@ summary: A web portal for OBE Implementation in university
 tags:
   - Research Paper
   - Team Project
+  - DevOps
 date: '2024-01-01T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
@@ -23,7 +24,7 @@ links:
   - icon: linkedin
     icon_pack: fab
     name: Connect
-    url: 'https://www.linkedin.com/in/ukantjadia' 
+    url: 'https://www.linkedin.com/in/ukantjadia'
 url_code: 'https://github.com/ukantjadia/OBE-Module-for-University'
 url_pdf: ''
 url_slides: ''

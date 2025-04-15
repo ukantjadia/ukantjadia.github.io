@@ -6,6 +6,7 @@ tags:
   - OBE
   - Classification
   - MLOps
+  - DevOps
   - NLP
 date: '2023-12-13T00:00:00Z'
 
@@ -26,7 +27,7 @@ links:
   - icon: linkedin
     icon_pack: fab
     name: Connect
-    url: 'https://www.linkedin.com/in/ukantjadia' 
+    url: 'https://www.linkedin.com/in/ukantjadia'
 url_code: 'https://github.com/ukantjadia/Boolm-s-Level-Detection-A-MLOPS-Project/'
 url_pdf: ''
 url_slides: ''
@@ -45,7 +46,7 @@ url_video: ''
 
 To know Bloom's Taxonomy in Detail see this pdf [This](./blooms-level.pdf)
 
-This project aims to classify the given statement into accurate Bloom's taxonomy levels out of six levels. This is an NLP-based project. This project is built with TF-IDF vectorizer and multinomial Naive Bayes techniques. 
+This project aims to classify the given statement into accurate Bloom's taxonomy levels out of six levels. This is an NLP-based project. This project is built with TF-IDF vectorizer and multinomial Naive Bayes techniques.
 
 **Bloom's Taxonomy Levels**: Bloom’s Taxonomy is a classification system that arranges learning objectives into six hierarchical levels, each representing a different cognitive skill.
 
@@ -58,12 +59,12 @@ augmented each Text input 3 times with the following parameter with `nlpaug` lib
 ContextualWordEmbsAug(model_path="bert-base-uncased", action="insert")
 ```
 
-> before augmendatation data shape : 600,2                                  
-> total 6 unique calsses 100 each                                   
-> augmented data shape : 1800,2                                  
+> before augmendatation data shape : 600,2
+> total 6 unique calsses 100 each
+> augmented data shape : 1800,2
 > total 6 unique classes 300 each                                   -->
 
-This project follows MLOps techniques well. I have divided this project into 6 different pipelines for easy implementation and scalability. I created a class in the pipeline for each class using different entities and components. In generating a configuration file from the user input in the YAML format. 
+This project follows MLOps techniques well. I have divided this project into 6 different pipelines for easy implementation and scalability. I created a class in the pipeline for each class using different entities and components. In generating a configuration file from the user input in the YAML format.
 
 In the end, I created a Docker image so it can be used by the Higher Education Institute(HEIs) for those who are using the OBE(Object Based Education) new curriculum technique. It just reduced the manual process of identifying each question and its root taxonomy level.
 
