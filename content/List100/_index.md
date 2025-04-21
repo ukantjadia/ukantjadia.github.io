@@ -19,17 +19,27 @@ header:
 Progress as of Dec 31, 2023: 40.75/92.**
 
 
-\n ✓ Learn Spanish
-\n ✓ Live in another country
-\n ✓ Start a nonprofit organization
-\n ✗ See my book being sold at an airport outside Vietnam
-\n ✓ Be in a movie/commercial (I’ve actually done this in 3 countries: Vietnam, India, US)
-\n ✗ Become the first author of a paper at a top-tier conference
-\n ✗ Get published on the New Yorker
-\n ✗ Read 1000 books (~60% done)
-\n ✓ Teach a graduate-level course
-\n ✓ Start a company
-\n ✗ Author a patent
+1. \n ✓ Learn Spanish
+
+1.  ✓ Live in another country
+
+1.  ✓ Start a nonprofit organization
+
+1.  ✗ See my book being sold at an airport outside Vietnam
+
+1.  ✓ Be in a movie/commercial (I’ve actually done this in 3 countries: Vietnam, India, US)
+
+1.  ✗ Become the first author of a paper at a top-tier conference
+
+1.  ✗ Get published on the New Yorker
+
+1.  ✗ Read 1000 books (~60% done)
+
+1.  ✓ Teach a graduate-level course
+
+1.  ✓ Start a company
+
+1.  ✗ Author a patent
 \n ✗ Write for a TV show that I watch
 \n ✗ Design and publish a game
 \n ✓ Fall in love
