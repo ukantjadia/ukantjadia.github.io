@@ -1,15 +1,15 @@
 ---
 title: Basic Git Commands
-subtitle: Some useful commands for git 
-summary: This post contains all the basic initial commands for initializing or publishing a repo 
-# description: 
+subtitle: Some useful commands for git
+summary: This post contains all the basic initial commands for initializing or publishing a repo
+# description:
 # slug: basic-git-commands
-# authors:
+# authors:w
 #     - Ukant Jadia
 
 draft: false
 date: 2023-12-30T14:15:59+05:30
-lastmod: 
+lastmod:
 
 
 featured: true
@@ -31,7 +31,7 @@ tags:
 
 
 # what you should do in git
-1. git init -b main 
+1. git init -b main
 2. git remote add origin <repo_link>
 3. git remote -v
 
@@ -44,7 +44,7 @@ git init
 git add .
 git commit -m "README"
 git branch -M Main
-git remote add origin <repo_link> 
+git remote add origin <repo_link>
 git push -u origin Main
 ```
 ----
@@ -55,7 +55,7 @@ git push -u origin Main
 
 
 
---- 
+---
 after clonning any repo it have the address of origin, simply you cannot add your repo url for backup/project/ICR
 for that you have to change the origin url follow the following command
 
@@ -69,16 +69,16 @@ git remote set-url origin <repo_url>
 
 ---
 + new error found
-+ sometimes when we clone the repo we use depth=1 to remove it's history 
-+ this give the error during pushing it to other origin 
-+ error looks like 
++ sometimes when we clone the repo we use depth=1 to remove it's history
++ this give the error during pushing it to other origin
++ error looks like
 +          ![remote rejected] Main -> Main (shallow update not allowed)
 +	    error: failed to push some refs to
 
-+ to solve this try 
++ to solve this try
 git remote set-url <old_url>
-git fetch --unshallow old 
-1. git init -b main 
+git fetch --unshallow old
+1. git init -b main
 2. git remote add origin <repo_link>
 3. git remote -v
 
@@ -91,7 +91,7 @@ git init
 git add .
 git commit -m "README"
 git branch -M Main
-git remote add origin <repo_link> 
+git remote add origin <repo_link>
 git push -u origin Main
 
 ----
@@ -102,7 +102,7 @@ git push -u origin Main
 
 
 
---- 
+---
 after clonning any repo it have the address of origin, simply you cannot add your repo url for backup/project/ICR
 for that you have to change the origin url follow the following command
 
@@ -116,22 +116,22 @@ git remote set-url origin <repo_url>
 
 ---
 + new error found
-+ sometimes when we clone the repo we use depth=1 to remove it's history 
-+ this give the error during pushing it to other origin 
-+ error looks like 
++ sometimes when we clone the repo we use depth=1 to remove it's history
++ this give the error during pushing it to other origin
++ error looks like
 +          ![remote rejected] Main -> Main (shallow update not allowed)
 +	    error: failed to push some refs to
 
-+ to solve this try 
++ to solve this try
 git remote set-url <old_url>
-git fetch --unshallow old 
+git fetch --unshallow old
 +!/bin/bash
 
-cd ~/work/obs/Obsidian 
+cd ~/work/obs/Obsidian
 
 git add .
 git commit -m 'daily update'
-git push 
+git push
 
 +!/bin/bash
 
@@ -139,7 +139,7 @@ git push
 git init
 
 + to check the changes
-git status 
+git status
 
 + to sort/simplify the changes
 git add .
@@ -154,7 +154,7 @@ git restore .
 git commit -m "daily update"
 
 + git push to add new file to the repo
-git push 
+git push
 
 
 
@@ -163,10 +163,10 @@ git remote add origin git@github.com:UserCtf777/Obsidian.git
 git branch -M master
 git push -m origin master
 
-+ To solve the conflicts during rebasing 
++ To solve the conflicts during rebasing
 git rebase --continue + fix conflicts and run this
 git rebase --skip + to skip this patch/changes
-git rebase --abort + to checkout the original branch 
+git rebase --abort + to checkout the original branch
 
 + When we have unresolved conflicts before merging or having error related to add
 git fetch + to gain the latest changes from server
@@ -175,13 +175,13 @@ git merge origin master + to give a try to automatice merging
 git merge --abort  + the unresolved conflicts will be cleared off
 
 + to edit the conflicts
-git rebase --edit-todo 
+git rebase --edit-todo
 git rebase --continue
 
-+ if conflicts dosen't resolve then 
-git rebase --abort 
++ if conflicts dosen't resolve then
+git rebase --abort
 + it will give the path of unresolved files
-+ if you know how to edit then resolve them 
++ if you know how to edit then resolve them
 + OR you can remove that confict by
 git rm <file>
 + if nothing is ahppening you can skip the commit wiht
