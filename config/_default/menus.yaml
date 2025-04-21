@@ -16,9 +16,9 @@ main:
   - name: Projects
     url: '#projects'
     weight: 40
-  - name: List100
-    url: 'list100/'
-    weight: 40
+  # - name: List100
+  #   url: 'list100/'
+  #   weight: 40
   - name: Contact
     url: '#contact'
     weight: 60
