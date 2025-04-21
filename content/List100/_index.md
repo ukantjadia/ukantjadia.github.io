@@ -18,9 +18,13 @@ header:
 List 100
 Things I want to do before I die. Please let me know if you have any recommendation.
 Progress as of Dec 31, 2023: 40.75/92.
+✅ Learn Spanish
+✅ Live in another country
 
-✓ Learn Spanish
-✓ Live in another country
+
+✔
+
+(:smile) sdfsafd
 ✓ Start a nonprofit organization
 ✗ See my book being sold at an airport outside Vietnam
 ✓ Be in a movie/commercial (I’ve actually done this in 3 countries: Vietnam, India, US)
