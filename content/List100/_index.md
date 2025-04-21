@@ -15,14 +15,19 @@ header:
 ---
 
 
-List 100
-Things I want to do before I die. Please let me know if you have any recommendation.
-Progress as of Dec 31, 2023: 40.75/92.
-✅ Learn Spanish
-✅ Live in another country
+## List 100
+
+> Things I want to do before I die. Please let me know if you have any recommendation.
+> Progress as of Dec 31, 2023: 40.75/92.
+> Things I want to do before I die. Please let me know if you have any recommendation.
+> ✅ Learn Spanish
+> ✅ Live in another country
 
 
-✔
+**✔**
+
+
+---
 
 (:smile) sdfsafd
 ✓ Start a nonprofit organization
@@ -30,10 +35,14 @@ Progress as of Dec 31, 2023: 40.75/92.
 ✓ Be in a movie/commercial (I’ve actually done this in 3 countries: Vietnam, India, US)
 ✗ Become the first author of a paper at a top-tier conference
 ✗ Get published on the New Yorker
-✗ Read 1000 books (~60% done)
-✓ Teach a graduate-level course
-✓ Start a company
-✗ Author a patent
+---
+
+- ✗ Read 1000 books (~60% done)
+- ✓ Teach a graduate-level course
+- ✓ Start a company
+- ✗ Author a patent
+
+---
 ✗ Write for a TV show that I watch
 ✗ Design and publish a game
 ✓ Fall in love
