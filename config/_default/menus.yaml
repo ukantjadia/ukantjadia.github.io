@@ -11,10 +11,10 @@ main:
     url: 'content/publication/conference-paper'
     weight: 20
   - name: Posts
-    url: 'content\posts'
+    url: 'content/posts'
     weight: 30
   - name: Projects
-    url: 'content\projects'
+    url: 'content/#projects'
     weight: 40
   # - name: Talks
   #   url: '#talks'
