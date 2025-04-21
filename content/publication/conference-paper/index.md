@@ -52,15 +52,15 @@ url_pdf: ''
 url_code: 'https://github.com/ukantjadia/Major-Projectr'
 url_dataset: 'https://physionet.org/content/ptb-xl/1.0.3/'
 url_poster: ''
-url_project: 'https://github.com/ukantjadia/vs-code-Profiles/blob/Main/content/Final%20Presentation%20Report.pdf'
-url_slides: 'https://github.com/ukantjadia/vs-code-Profiles/blob/Main/content/Final%20Presentation%20Ukant%20Jadia.pdf'
+url_project: 'https://raw.githubusercontent.com/ukantjadia/vs-code-Profiles/6a16e6c441c94010456f28e256ce2fad71524151/content/Final%20Presentation%20Report.pdf'
+url_slides: 'https://raw.githubusercontent.com/ukantjadia/vs-code-Profiles/6a16e6c441c94010456f28e256ce2fad71524151/content/Final%20Presentation%20Ukant%20Jadia.pdf'
 url_source: 'https://github.com/ukantjadia/Major-Project'
 url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: 'ECG-Lense Model(https://github.com/ukantjadia/vs-code-Profiles/blob/Main/content/CNN-model.png)'
+  caption: 'ECG-Lense Model'
   focal_point: ''
   preview_only: false
 
