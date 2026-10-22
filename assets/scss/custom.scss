@@ -90,6 +90,21 @@ code, kbd, pre, samp,
   filter: invert(1);
 }
 
+// Post and publication titles in lists: the one orange accent per item (large bold text, AA on white)
+.stream-item .article-title a {
+  color: var(--ukant-orange);
+
+  &:hover {
+    color: var(--ukant-ink);
+    text-decoration: none;
+  }
+}
+
+// No footer strip under the last section
+.page-footer {
+  display: none;
+}
+
 // =============================================================================
 // 4. UKANT wordmark: strikethrough-T accent (only when the .ukant-mark class is used)
 // =============================================================================
@@ -198,6 +213,14 @@ blockquote {
 
   .featurette-icon img {
     filter: none;
+  }
+
+  .stream-item .article-title a {
+    color: var(--ukant-orange);
+
+    &:hover {
+      color: var(--ukant-white);
+    }
   }
 
   blockquote em, blockquote i {
