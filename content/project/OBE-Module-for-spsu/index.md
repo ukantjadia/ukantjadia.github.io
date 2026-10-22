@@ -51,6 +51,5 @@ My Role: My role is to build the business logic, conduct literature reviews, gen
 
 
 
-![1710048667634](image/index/1710048667634.png)
 
 ![1710048747037](image/index/1710048747037.png)

@@ -51,4 +51,3 @@ Dataset description:
 -. {ClassID}_{ImageID}.jpg
 -. ClassID: 0 or 1; 0 means non-food and 1 means food.
 -. ImageID: ID of the image within the class
-![1710055555752](image/index/1710055555752.png)
