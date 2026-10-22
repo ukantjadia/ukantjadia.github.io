@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Ukant Jadia  # Website name
-baseURL: 'https://ukantjadia.github.io/' # Website URL (the deploy workflow passes the GitHub Pages URL)
+baseURL: 'https://ukantjadia.github.io/' # Website URL (the deploy workflow uses this)
 
 ############################
 ## LANGUAGE

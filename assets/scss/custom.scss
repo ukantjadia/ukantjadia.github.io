@@ -57,11 +57,37 @@ code, kbd, pre, samp,
 }
 
 // Tag pills
-.badge,
-.tag-cloud a {
+.badge {
   background-color: rgba(255, 90, 31, 0.1);
   color: var(--ukant-orange-text);
   border-color: rgba(255, 90, 31, 0.25);
+}
+
+// Popular Topics: plain grey words, orange only on hover
+.tag-cloud a {
+  background: none !important;
+  border: 0 !important;
+  color: #55565a !important;
+
+  &:hover {
+    color: var(--ukant-orange-text) !important;
+  }
+}
+
+// Project filters: outlined, only the active one is orange
+#projects .btn-group .btn-primary {
+  background-color: transparent !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+
+  &.active {
+    background-color: var(--ukant-orange) !important;
+    border-color: var(--ukant-orange) !important;
+  }
+}
+
+// Stack icons are white SVGs; show them black on light pages
+.featurette-icon img {
+  filter: invert(1);
 }
 
 // =============================================================================
@@ -149,10 +175,29 @@ blockquote {
   }
 
   .badge,
-  .tag-cloud a,
   .metric,
   .lead strong {
     color: var(--ukant-orange-soft);
+  }
+
+  .tag-cloud a {
+    color: rgba(255, 255, 255, 0.7) !important;
+
+    &:hover {
+      color: var(--ukant-orange-soft) !important;
+    }
+  }
+
+  #projects .btn-group .btn-primary {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+
+    &:not(.active) {
+      color: rgba(255, 255, 255, 0.85) !important;
+    }
+  }
+
+  .featurette-icon img {
+    filter: none;
   }
 
   blockquote em, blockquote i {

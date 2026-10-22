@@ -50,7 +50,7 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
-          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --minify  # ponytail: baseURL comes from config/_default/hugo.yaml (https); the Pages API still reports http
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -15,9 +15,9 @@ header:
 ---
 
 **Things I want to do before I die. Please let me know if you have any recommendation.
-Progress as of Feb 28, 2025: 0.75/92.**
+Progress as of Oct 23, 2026: 4/60 done, 2 ongoing.**
 
-1. ✗ Learn medarian
+1. ✗ Learn Mandarin
 1. ✗ Live in another country
 1. ✗ Start a nonprofit organization
 1. ✗ Become the first author of a paper at a top-tier conference
@@ -46,8 +46,8 @@ Progress as of Feb 28, 2025: 0.75/92.**
 1. ✗ Volunteer 1000 hours to help to the elderlies
 1. ✗ Start a research lab
 1. ✓ Take a walk in the rain
-1. ✗ Eat at a 5 Michelin star restaurant
-1. ✗ Ask a stranger out (she said no)
+1. ✗ Eat at a 3 Michelin star restaurant
+1. ✓ Ask a stranger out (she said no)
 1. ✗ Sleep in a castle
 1. ✗ Sleep outside on the beach, under the sky
 1. ✗ Go on an African safari
@@ -65,7 +65,7 @@ Progress as of Feb 28, 2025: 0.75/92.**
 1. ✗ Stay with an Amazonian tribe
 1. ✗ Visit Vatican
 1. ✗ Visit 100 countries (0% done)
-1. ✗ Go to South Pole or North Pole \n
+1. ✗ Go to South Pole or North Pole
 1. ✗ Climb Great Pyramid of Giza, Egypt
 1. ✗ Climb Great wall, China
 1. ✗ Carnival in Brazil
