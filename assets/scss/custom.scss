@@ -40,17 +40,8 @@ code, kbd, pre, samp,
 // 3. Accent: UKANT Orange
 // =============================================================================
 
-// Text links: burnt orange on light pages (readable), soft orange on dark.
-a:not(.btn):not(.navbar-brand):not(.nav-link) {
-  color: var(--ukant-orange-text);
-
-  &:hover {
-    color: var(--ukant-orange-text);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 3px;
-  }
-}
+// Text link colours come from data/themes/ukant.toml (link / link_hover), so the theme's
+// neutral titles and summaries (.article-title a, a.summary-link) stay neutral.
 
 // Primary buttons: orange with black text (6.3:1). White on orange is too faint.
 .btn-primary,
@@ -153,14 +144,6 @@ blockquote {
 // =============================================================================
 .dark,
 [data-theme="dark"] {
-  a:not(.btn):not(.navbar-brand):not(.nav-link) {
-    color: var(--ukant-orange-soft);
-
-    &:hover {
-      color: var(--ukant-orange);
-    }
-  }
-
   .btn-outline-primary {
     color: var(--ukant-orange-soft) !important;
   }
