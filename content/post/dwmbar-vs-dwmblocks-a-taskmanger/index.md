@@ -1,5 +1,5 @@
 ---
-title: Dwmbar vs Dwmblocks a Taskmanger
+title: Dwmbar vs Dwmblocks, a Task Manager
 subtitle: issues witht the dwmbar and solution with dwmblocks
 
 summary: issues witht the dwmbar and solution with dwmblocks

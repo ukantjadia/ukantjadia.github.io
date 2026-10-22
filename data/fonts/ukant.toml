@@ -1,0 +1,12 @@
+# Font style metadata
+# UKANT brand fonts. Same format as Hugo Blox 5.9.7's own data/fonts/*.toml.
+name = "UKANT"
+
+# Optional Google font URL
+google_fonts = "family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700"
+
+# Font families
+heading_font = "Space Grotesk"
+body_font = "Inter"
+nav_font = "Inter"
+mono_font = "JetBrains Mono"

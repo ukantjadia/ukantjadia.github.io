@@ -11,27 +11,30 @@ last_name: Jadia
 
 # Status emoji
 status: 
-  icon: ☕️
+  icon: ⚡
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: Graduate | ML & Software Engineer 
+role: Backend & AI Engineer · Team Lead, Caprae Capital
 
 # Organizations/Affiliations to show in About widget
 organizations:
+  - name: Caprae Capital
+    url: https://capraecapital.com
   - name: Sir Padampat Singhania University
     url: https://www.spsu.ac.in/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include applied machine learning, visualization, programming boring stuff.
+bio: AI can ship. I make it earn. Backend & AI engineer and team lead at Caprae Capital. I turn vibe code into production code.
 
 # Interests to show in About widget
 interests:
-  - Machine Learning
-  - Medical Solutions
-  - Large Language Model             
+  - Backend Architecture
+  - AI Engineering
+  - Distributed Systems
+  - Software for M&A and Deal Sourcing
 
 # Education to show in About widget
 education:
@@ -107,8 +110,8 @@ social:
     
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/ukantjadia
-    label: Follow me on Twitter
+    link: https://x.com/ukantjadia
+    label: Follow me on X
     display:
       header: true
   # - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
@@ -134,5 +137,21 @@ social:
 highlight_name: false
 ---
 
-I'm a fast learner who loves exploring data and turning it into clear stories. My goal is to grow as a Researcher/Machine Learning Engineer in a stable company where I can contribute with my skills and dedication. I'm a hard worker who thrives under pressure, using tools like stats and programming to get results. Plus, I'm great at talking to people to ensure everyone's on the same page.
+> *They said I can't. UKANT did.*
+
+**AI can ship. I make it earn.**
+
+I'm Ukant. I lead backend engineering at [Caprae Capital](https://capraecapital.com), an M&A firm. I own the backend, the Stripe integration and the AWS infrastructure, and I lead the DB and Email teams. I build with AI every day, and my job is to turn vibe code into production code.
+
+The numbers I'm willing to defend: API latency dropped from **2 seconds to 20 ms** (100x faster). Docker images went from **1.5 GB to 220 MB** (87% smaller). Both shipped, both still running.
+
+Before Caprae, I built enterprise data pipelines at Mente Consultancies in SAS and SAS Viya for a banking client: Calendar and Rebase Marts, statistical variables, and dashboards that improved data quality by 25% and cut drift by 30%. Before that, an [IEEE paper on cardiac ECG classification](https://ieeexplore.ieee.org/document/10767459): six months of work, 80% accuracy and 90% ROC-AUC, the best of six models on the PTB-XL dataset.
+
+I learn by breaking things and rebuilding them. Two years on a riced DWM, tmux and nvim setup will do that. I share what doesn't work as readily as what does, and I'd rather ship something rough than wait until it's perfect.
+
+I write **Steal Like an Engineer**: a feature from a famous product, the trick behind it, and how my team used the same idea.
+
+What I want is direct: meaningful work, freelance independence, and money. The kind of money that helps my family. Hiring is secondary. I'm building.
+
+📍 Udaipur, India · IST · Remote-first
 {style="text-align: justify;"}

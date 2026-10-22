@@ -57,31 +57,27 @@ sections:
   #     columns: '2'
   - block: features
     content:
-      title: Skills
+      title: Stack
+      subtitle: What I use in production. Numbers attached where they matter.
       items:
       - name: Languages
-        description: Python, C/C++, Dart, Shell, Java
-        # percent: 75
+        description: Python (daily) · SQL · Dart · Bash · TypeScript (learning)
         icon:   language
         icon_pack: custom
-      - name: Frameworks/Library
-        description: Flutter, Flask, Tensorflow
-        # percent: 70
+      - name: Backend & APIs
+        description: REST · Microservices · Stripe · SSO · 100x latency wins (2s→20ms)
         icon: framework
         icon_pack: custom
-      - name: Database
-        description: MySQL, SQL, Firestore
-        # percent: 70
+      - name: Databases
+        description: DynamoDB · SQL (multi-tenant 3NF) · Redis · MySQL
         icon: database
         icon_pack: custom
-      - name: Tools/Platform
-        description: Vim, Git, Linux, Docker, MLFlow, PowerBI
-        # percent: 80
+      - name: DevOps & Cloud
+        description: AWS (EC2, Route53, DynamoDB, S3, ECR) · Docker (87% shrink) · CI/CD · Nginx · systemd
         icon: platform
         icon_pack: custom
-      - name: Miscellaneous
-        description: Statistics, Deep Learning, AWS/Azure
-        # percent: 70
+      - name: ML & Research
+        description: TensorFlow · Keras · MLFlow · scikit-learn · SAS Viya · IEEE-published
         icon: miscellaneous
         icon_pack: custom
 
@@ -97,7 +93,22 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: Data Science Intern
+        - title: Backend Engineer & Team Lead
+          company: Caprae Capital
+          company_url: 'https://capraecapital.com'
+          company_logo: ''
+          location: Remote
+          date_start: '2026-01-01'
+          date_end: ''
+          description: |2-
+              * Own the entire backend, **Stripe integration**, and AWS infrastructure for Caprae's production services.
+              * Lead the **DB** and **Email** teams; built **multi-tenant architecture** with **3NF design** and matrix-based workflows.
+              * Designed a **modular email generation engine** with template variables, feedback capture, copy tracking, and DB-linked performance monitoring.
+              * Cut API response time **2 s → 20 ms** (100x faster) and Docker image **1.5 GB → 220 MB** (87% smaller).
+              * **Stack**: Python · AWS (EC2, Route53, DynamoDB, Lightsail, S3, ECR) · Docker · Redis · Nginx · systemd · CI/CD · Stripe · Microservices.
+              * *Joined Oct 2025 as Junior Backend Engineer; promoted to Backend Engineer & Team Lead Jan 2026.*
+
+        - title: Data Scientist (Intern → Full-time)
           company: Mente Consultancies
           company_url: 'https://www.linkedin.com/company/mente-consultancies/'
           company_logo: ''
@@ -105,10 +116,10 @@ sections:
           date_start: '2024-07-22'
           date_end: '2025-01-22'
           description: |2-
-              * Designed Python-based systems for rolling feature updates, signature storage, and real-time predictions without database dependency.
-              * Built Calendar and Rebase Marts in SAS to restructure time-series data, address seasonality, and ensure data quality.
-              * Developed statistical variables and pipelines in SAS Viya for machine learning models, enabling robust predictions.
-              * Created SAS Visual Analytics dashboards to monitor model performance and data drifts.
+              * Designed Python systems for rolling feature updates, signature storage, and real-time predictions without database dependency.
+              * Built **Calendar and Rebase Marts in SAS** for a banking client, restructuring time-series data and improving data quality by **25%**.
+              * Developed **statistical variables in SAS Viya** and Visual Analytics dashboards that reduced data drift **30%**.
+              * **Stack**: SAS · SAS Viya · Python · SQL · PowerBI · Statistical Analysis.
 
         - title: SWE Intern
           company: Cognus Technology

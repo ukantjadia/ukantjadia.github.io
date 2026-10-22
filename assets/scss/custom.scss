@@ -1,0 +1,182 @@
+// UKANT brand styling, applied on top of the Hugo Blox Academic theme.
+// Brand: black + UKANT Orange (#FF5A1F) + white. Fonts: Space Grotesk, Inter, JetBrains Mono.
+// Fonts are loaded by data/fonts/ukant.toml; colours per mode by data/themes/ukant.toml.
+
+// =============================================================================
+// 1. UKANT brand tokens
+// =============================================================================
+:root {
+  --ukant-ink: #0b0b0c;
+  --ukant-white: #ffffff;
+  --ukant-orange: #ff5a1f;      // the brand accent
+  --ukant-orange-soft: #ff8c5f; // hover / links on dark
+  --ukant-orange-text: #c2410c; // orange text on white (5.2:1)
+  --ukant-gray: #6b7280;
+}
+
+// =============================================================================
+// 2. Typography
+// =============================================================================
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.navbar-brand,
+.site-title {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+code, kbd, pre, samp,
+.highlight {
+  font-family: "JetBrains Mono", "Fira Code", "SF Mono", monospace;
+}
+
+// =============================================================================
+// 3. Accent: UKANT Orange
+// =============================================================================
+
+// Text links: burnt orange on light pages (readable), soft orange on dark.
+a:not(.btn):not(.navbar-brand):not(.nav-link) {
+  color: var(--ukant-orange-text);
+
+  &:hover {
+    color: var(--ukant-orange-text);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+}
+
+// Primary buttons: orange with black text (6.3:1). White on orange is too faint.
+.btn-primary,
+.btn-outline-primary:hover {
+  background-color: var(--ukant-orange) !important;
+  border-color: var(--ukant-orange) !important;
+  color: var(--ukant-ink) !important;
+}
+
+.btn-outline-primary {
+  color: var(--ukant-orange-text) !important;
+  border-color: var(--ukant-orange) !important;
+}
+
+// Tag pills
+.badge,
+.tag-cloud a {
+  background-color: rgba(255, 90, 31, 0.1);
+  color: var(--ukant-orange-text);
+  border-color: rgba(255, 90, 31, 0.25);
+}
+
+// =============================================================================
+// 4. UKANT wordmark: strikethrough-T accent (only when the .ukant-mark class is used)
+// =============================================================================
+.navbar-brand,
+.site-title {
+  font-weight: 700;
+
+  &.ukant-mark {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0.6em;
+      height: 3px;
+      background: var(--ukant-orange);
+      right: 0.05em;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+  }
+}
+
+// =============================================================================
+// 5. Emphasis: numbers should pop
+// =============================================================================
+strong, b {
+  font-weight: 600;
+  color: inherit;
+}
+
+.metric, .lead strong {
+  color: var(--ukant-orange-text);
+}
+
+// =============================================================================
+// 6. Sections and cards
+// =============================================================================
+.home-section,
+section.wg-about,
+section.wg-experience,
+section.wg-portfolio,
+section.wg-collection {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.card,
+.portfolio-card {
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--ukant-orange);
+    box-shadow: 0 4px 16px rgba(255, 90, 31, 0.1);
+  }
+}
+
+// =============================================================================
+// 7. Quote / tagline
+// =============================================================================
+blockquote {
+  border-left: 3px solid var(--ukant-orange);
+  padding-left: 1rem;
+  font-style: italic;
+  color: var(--ukant-gray);
+
+  // "They said I can't. UKANT did." stands out
+  em, i {
+    color: var(--ukant-ink);
+    font-weight: 500;
+  }
+}
+
+// =============================================================================
+// 8. Dark mode
+// =============================================================================
+.dark,
+[data-theme="dark"] {
+  a:not(.btn):not(.navbar-brand):not(.nav-link) {
+    color: var(--ukant-orange-soft);
+
+    &:hover {
+      color: var(--ukant-orange);
+    }
+  }
+
+  .btn-outline-primary {
+    color: var(--ukant-orange-soft) !important;
+  }
+
+  .badge,
+  .tag-cloud a,
+  .metric,
+  .lead strong {
+    color: var(--ukant-orange-soft);
+  }
+
+  blockquote em, blockquote i {
+    color: var(--ukant-white);
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(255, 90, 31, 0.2);
+  }
+}

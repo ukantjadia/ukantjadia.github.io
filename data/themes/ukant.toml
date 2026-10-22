@@ -1,0 +1,37 @@
+# Theme metadata
+# UKANT brand colours. Same format as Hugo Blox 5.9.7's own data/themes/*.toml.
+# UKANT Orange #FF5A1F is the accent. Light-mode text links use #C2410C (see assets/scss/custom.scss).
+name = "UKANT"
+
+[light]
+  # Primary
+  primary = "#FF5A1F"
+
+  # Menu
+  menu_primary = "#fff"
+  menu_text = "#0B0B0C"
+  menu_text_active = "#C2410C"
+  menu_title = "#0B0B0C"
+
+  # Home sections
+  background = "#FFFFFF"
+  home_section_odd = "#FFFFFF"
+  home_section_even = "#FFF7F3"
+
+[dark]
+  # Primary
+  primary = "#FF5A1F"
+
+  # Menu
+  menu_primary = "#0B0B0C"
+  menu_text = "rgba(255,255,255,0.7)"
+  menu_text_active = "#FF5A1F"
+  menu_title = "#FFFFFF"
+
+  # Home sections
+  background = "#0B0B0C"
+  home_section_odd = "#0B0B0C"
+  home_section_even = "#151517"
+
+  link = "#FF8C5F"
+  link_hover = "#FF5A1F"

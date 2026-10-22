@@ -6,9 +6,9 @@
 # Appearance
 
 appearance:
-  # theme_day: minimal
-  theme_night: minimal
-  # font: minimal
+  theme_day: ukant
+  theme_night: ukant
+  font: ukant
   # font_size: L
 
 # SEO
@@ -18,7 +18,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'A highly-customizable Hugo academic resume theme powered by Hugo Blox Builder.'
+    description: 'Ukant Jadia builds backend systems and AI tools that survive production. Team lead at Caprae Capital, writing Steal Like an Engineer.'
     twitter: 'ukantjadia'
   analytics:
     google_analytics: ''

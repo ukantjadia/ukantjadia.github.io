@@ -1,5 +1,5 @@
 ---
-title: Learn Termux a Terminal Multiplexer
+title: Learn tmux, a Terminal Multiplexer
 subtitle: "Learn the best tool you can have on a non-GUI server or machine."
 summary: "Learn the best tool you can have on a non-GUI server or machine."
 
