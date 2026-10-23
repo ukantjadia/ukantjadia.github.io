@@ -335,10 +335,8 @@ sections:
       # phone: +91 637 758 1234
       # appointment_url: 'https://calendly.com'
       address:
-        street: 25-B Raghunathpura
-        city: Udaipur
-        region: Raj
-        postcode: '313001'
+        city: Udaipur & Delhi
+        region: India
         country: India
         country_code: IN
       # directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
@@ -346,9 +344,9 @@ sections:
       #   - 'Monday 10:00 to 13:00'
       #   - 'Wednesday 09:00 to 10:00'
       # Choose a map provider in `params.yaml` to show a map from these coordinates
-      coordinates:
-        latitude: '24.6098491'
-        longitude: '73.7343402'
+      coordinates:  # blank = no map (the pin showed the home address)
+        latitude: ''
+        longitude: ''
       contact_links:
         - icon: twitter
           icon_pack: fab
