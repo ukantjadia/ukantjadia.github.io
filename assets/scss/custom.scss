@@ -114,22 +114,10 @@ code, kbd, pre, samp,
   position: relative;
   width: 100%;
   max-width: 1180px;
-  height: clamp(430px, 54vw, 590px);
+  height: clamp(500px, 58vw, 680px);
   margin: -1.5rem auto -0.5rem;
   overflow: hidden;
   isolation: isolate;
-}
-
-.ukant-orbit::before {
-  content: "";
-  position: absolute;
-  inset: 50% auto auto 50%;
-  width: Min(72vw, 880px);
-  height: Min(32vw, 360px);
-  border: 1px solid rgba(255, 90, 31, 0.18);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
 }
 
 .ukant-orbit__stage { position: absolute; inset: 0; }
@@ -138,19 +126,18 @@ code, kbd, pre, samp,
   --orbit-x: 0px;
   --orbit-y: 0px;
   --orbit-scale: 0.7;
-  --orbit-opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
   display: block;
-  width: clamp(112px, 15vw, 188px);
+  width: clamp(108px, 14vw, 176px);
   aspect-ratio: 4 / 3;
-  opacity: var(--orbit-opacity);
+  opacity: 1;
   transform: translate(-50%, -50%) translate(var(--orbit-x), var(--orbit-y)) scale(var(--orbit-scale));
   transform-origin: center;
   outline: none;
   will-change: transform, opacity;
-  transition: opacity 220ms ease-out, filter 220ms ease-out;
+  transition: width 320ms ease-out, filter 220ms ease-out;
 }
 
 .ukant-orbit__item img {
@@ -164,6 +151,18 @@ code, kbd, pre, samp,
   box-shadow: 0 12px 34px var(--orbit-shadow);
 }
 
+.ukant-orbit__item.is-active {
+  width: Min(68vw, 820px);
+  max-width: calc(100% - 2rem);
+  aspect-ratio: auto;
+}
+
+.ukant-orbit__item.is-active img {
+  height: auto;
+  max-height: 68vh;
+  object-fit: contain;
+}
+
 .ukant-orbit__item:hover img,
 .ukant-orbit__item:focus-visible img,
 .ukant-orbit__item.is-active img {
@@ -172,7 +171,7 @@ code, kbd, pre, samp,
 }
 
 .ukant-orbit__item:focus-visible { outline: 3px solid var(--ukant-orange); outline-offset: 7px; }
-.ukant-orbit.is-focused .ukant-orbit__item:not(.is-active) { filter: saturate(0.45); }
+.ukant-orbit.is-focused .ukant-orbit__item:not(.is-active) { filter: saturate(0.75); }
 
 // Keep the viewer quiet: arrows, close, and the photograph only.
 .fancybox-show-toolbar .fancybox-toolbar .fancybox-button:not(.fancybox-button--close),
@@ -183,8 +182,8 @@ code, kbd, pre, samp,
 
 @media (max-width: 767px) {
   .ukant-orbit { height: 430px; margin-block: -2rem -1rem; }
-  .ukant-orbit::before { width: 88vw; height: 250px; }
   .ukant-orbit__item { width: clamp(92px, 30vw, 132px); }
+  .ukant-orbit__item.is-active { width: 88vw; }
 }
 
 @media (prefers-reduced-motion: reduce) {

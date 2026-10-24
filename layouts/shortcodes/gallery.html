@@ -11,7 +11,7 @@
 <div class="ukant-orbit" data-ukant-orbit aria-label="Moving photo gallery">
   <div class="ukant-orbit__stage">
     {{ range $index, $item := $items }}
-      {{ $thumb := $item.image.Fill "440x330 webp q78 Center" }}
+      {{ $thumb := $item.image.Fit "900x700 webp q80" }}
       {{ $viewer := $item.image.Fit "1600x1600 webp q82" }}
       <a class="ukant-orbit__item"
         href="{{ $viewer.RelPermalink }}"
@@ -36,6 +36,24 @@
     let runStartedAt = performance.now();
     let animationFrame = 0;
 
+    const seeded = (index, salt) => {
+      const value = Math.sin((index + 1) * 12.9898 + salt * 78.233) * 43758.5453;
+      return value - Math.floor(value);
+    };
+
+    const paths = items.map((item, index) => ({
+      homeX: seeded(index, 1) * 1.5 - 0.75,
+      homeY: seeded(index, 2) * 1.32 - 0.66,
+      driftX: 0.07 + seeded(index, 3) * 0.1,
+      driftY: 0.06 + seeded(index, 4) * 0.09,
+      speedX: 0.00011 + seeded(index, 5) * 0.00016,
+      speedY: 0.0001 + seeded(index, 6) * 0.00015,
+      phaseX: seeded(index, 7) * Math.PI * 2,
+      phaseY: seeded(index, 8) * Math.PI * 2,
+      scale: 0.72 + seeded(index, 9) * 0.3,
+      pulse: seeded(index, 10) * Math.PI * 2,
+    }));
+
     const elapsed = (now) => active ? elapsedBeforePause : elapsedBeforePause + now - runStartedAt;
 
     const setActive = (item) => {
@@ -57,30 +75,29 @@
     const layout = (now) => {
       const width = stage.clientWidth;
       const height = stage.clientHeight;
-      const radiusX = Math.min(width * 0.39, 470) * (active ? 1.08 : 1);
-      const radiusY = Math.min(height * 0.31, 185) * (active ? 1.1 : 1);
-      const rotation = reducedMotion.matches ? 0 : elapsed(now) / 46000 * Math.PI * 2;
+      const time = reducedMotion.matches ? 0 : elapsed(now);
 
       items.forEach((item, index) => {
         if (item === active) {
           item.style.setProperty('--orbit-x', '0px');
           item.style.setProperty('--orbit-y', '0px');
-          item.style.setProperty('--orbit-scale', '1.45');
-          item.style.setProperty('--orbit-opacity', '1');
+          item.style.setProperty('--orbit-scale', '1');
           item.style.zIndex = '100';
           return;
         }
 
-        const angle = rotation + index / items.length * Math.PI * 2;
-        const depth = (Math.sin(angle) + 1) / 2;
-        const x = Math.cos(angle) * radiusX;
-        const y = Math.sin(angle) * radiusY;
-        const scale = (0.58 + depth * 0.44) * (active ? 0.78 : 1);
+        const path = paths[index];
+        const x = path.homeX * width * 0.5
+          + Math.sin(time * path.speedX + path.phaseX) * width * path.driftX
+          + Math.sin(time * path.speedY * 0.47 + path.phaseY) * width * 0.035;
+        const y = path.homeY * height * 0.5
+          + Math.cos(time * path.speedY + path.phaseY) * height * path.driftY
+          + Math.sin(time * path.speedX * 0.61 + path.phaseX) * height * 0.04;
+        const scale = path.scale + Math.sin(time * 0.00032 + path.pulse) * 0.07;
         item.style.setProperty('--orbit-x', `${x.toFixed(2)}px`);
         item.style.setProperty('--orbit-y', `${y.toFixed(2)}px`);
-        item.style.setProperty('--orbit-scale', scale.toFixed(3));
-        item.style.setProperty('--orbit-opacity', active ? '0.34' : (0.5 + depth * 0.5).toFixed(3));
-        item.style.zIndex = String(10 + Math.round(depth * 40));
+        item.style.setProperty('--orbit-scale', (scale * (active ? 0.82 : 1)).toFixed(3));
+        item.style.zIndex = String(10 + Math.round((y / height + 0.5) * 30));
       });
 
       animationFrame = requestAnimationFrame(layout);
