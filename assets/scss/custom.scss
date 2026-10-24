@@ -109,9 +109,10 @@ code, kbd, pre, samp,
 // 4. Gallery: continuously moving circular cluster
 // =============================================================================
 .ukant-orbit {
-  --orbit-border: rgba(11, 11, 12, 0.2);
-  --orbit-shadow: rgba(11, 11, 12, 0.2);
+  --orbit-halo: rgba(92, 92, 98, 0.42);
+  --orbit-halo-focus: rgba(92, 92, 98, 0.58);
   --tile-width: 176px;
+  --tile-height: 132px;
   position: relative;
   width: 100%;
   max-width: 1180px;
@@ -131,43 +132,42 @@ code, kbd, pre, samp,
   left: 50%;
   display: block;
   width: var(--tile-width);
-  aspect-ratio: 4 / 3;
+  height: var(--tile-height);
   opacity: 1;
   transform: translate(-50%, -50%) translate(var(--orbit-x), var(--orbit-y));
   transform-origin: center;
   outline: none;
   will-change: transform, opacity;
-  transition: width 320ms ease-out, filter 220ms ease-out;
+  transition: width 320ms ease-out, height 320ms ease-out, filter 220ms ease-out;
 }
 
 .ukant-orbit__item img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border: 1px solid var(--orbit-border);
+  object-fit: contain;
+  border: 0;
   border-radius: 2px;
-  background: #fff;
-  box-shadow: 0 12px 34px var(--orbit-shadow);
+  background: transparent;
+  filter: drop-shadow(0 0 var(--halo-size, 4px) var(--orbit-halo));
+  transition: filter 220ms ease-out;
 }
 
 .ukant-orbit__item.is-active {
-  width: Min(68vw, 820px);
-  max-width: calc(100% - 2rem);
-  aspect-ratio: auto;
+  width: var(--active-width, Min(68vw, 820px));
+  height: auto;
 }
 
 .ukant-orbit__item.is-active img {
   height: auto;
-  max-height: 68vh;
+  max-height: 72vh;
   object-fit: contain;
 }
 
 .ukant-orbit__item:hover img,
 .ukant-orbit__item:focus-visible img,
 .ukant-orbit__item.is-active img {
-  border-color: var(--ukant-orange);
-  box-shadow: 0 20px 52px rgba(255, 90, 31, 0.2);
+  filter: drop-shadow(0 0 calc(var(--halo-size, 4px) + 5px) var(--orbit-halo-focus));
 }
 
 .ukant-orbit__item:focus-visible { outline: 3px solid var(--ukant-orange); outline-offset: 7px; }
@@ -182,7 +182,6 @@ code, kbd, pre, samp,
 
 @media (max-width: 767px) {
   .ukant-orbit { height: 430px; margin-block: -2rem -1rem; }
-  .ukant-orbit__item.is-active { width: 88vw; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -316,9 +315,7 @@ blockquote {
   }
 
   .ukant-orbit {
-    --orbit-border: rgba(255, 255, 255, 0.24);
-    --orbit-shadow: rgba(0, 0, 0, 0.46);
+    --orbit-halo: rgba(176, 176, 184, 0.38);
+    --orbit-halo-focus: rgba(196, 196, 204, 0.54);
   }
-
-  .ukant-orbit__item img { background: #151517; }
 }
