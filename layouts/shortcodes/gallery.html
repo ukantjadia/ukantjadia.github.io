@@ -1,4 +1,4 @@
-{{/* Circular moving gallery. Albums remain folders and Fancybox groups by album. */}}
+{{/* Asymmetric moving gallery with area-based sizing and collision limits. */}}
 {{ .Page.Store.Set "has_gallery" true }}
 {{ $items := slice }}
 {{ range $album := site.Data.albums.albums }}
@@ -31,9 +31,13 @@
     const stage = root.querySelector('.ukant-orbit__stage');
     const items = Array.from(root.querySelectorAll('.ukant-orbit__item'));
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const aspectRatio = 4 / 3;
+    const fillRatio = 0.62;
+    const maxOverlapRatio = 0.30;
     let active = null;
-    let elapsedBeforePause = 0;
-    let runStartedAt = performance.now();
+    let tileWidth = 0;
+    let tileHeight = 0;
+    let previousTime = performance.now();
     let animationFrame = 0;
 
     const seeded = (index, salt) => {
@@ -41,63 +45,156 @@
       return value - Math.floor(value);
     };
 
-    const paths = items.map((item, index) => ({
-      homeX: seeded(index, 1) * 1.5 - 0.75,
-      homeY: seeded(index, 2) * 1.32 - 0.66,
-      driftX: 0.07 + seeded(index, 3) * 0.1,
-      driftY: 0.06 + seeded(index, 4) * 0.09,
-      speedX: 0.00011 + seeded(index, 5) * 0.00016,
-      speedY: 0.0001 + seeded(index, 6) * 0.00015,
-      phaseX: seeded(index, 7) * Math.PI * 2,
-      phaseY: seeded(index, 8) * Math.PI * 2,
-      scale: 0.72 + seeded(index, 9) * 0.3,
-      pulse: seeded(index, 10) * Math.PI * 2,
-    }));
+    const states = items.map((item, index) => {
+      const angle = seeded(index, 1) * Math.PI * 2;
+      const speed = 9 + seeded(index, 2) * 11;
+      return {
+        x: 0,
+        y: 0,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        phase: seeded(index, 3) * Math.PI * 2,
+      };
+    });
 
-    const elapsed = (now) => active ? elapsedBeforePause : elapsedBeforePause + now - runStartedAt;
+    const overlapRatio = (a, b) => {
+      const overlapX = Math.max(0, tileWidth - Math.abs(a.x - b.x));
+      const overlapY = Math.max(0, tileHeight - Math.abs(a.y - b.y));
+      return overlapX * overlapY / (tileWidth * tileHeight);
+    };
+
+    const placeItems = () => {
+      const width = stage.clientWidth;
+      const height = stage.clientHeight;
+      const areaPerImage = width * height * fillRatio / Math.max(items.length, 1);
+      tileWidth = Math.min(240, Math.max(84, Math.sqrt(areaPerImage * aspectRatio)));
+      tileHeight = tileWidth / aspectRatio;
+      root.style.setProperty('--tile-width', `${tileWidth.toFixed(2)}px`);
+
+      const boundX = Math.max(0, (width - tileWidth) / 2);
+      const boundY = Math.max(0, (height - tileHeight) / 2);
+
+      states.forEach((state, index) => {
+        let best = null;
+        for (let attempt = 0; attempt < 120; attempt += 1) {
+          const candidate = {
+            x: (seeded(index, 20 + attempt * 2) * 2 - 1) * boundX,
+            y: (seeded(index, 21 + attempt * 2) * 2 - 1) * boundY,
+          };
+          const worstOverlap = states.slice(0, index).reduce(
+            (worst, placed) => Math.max(worst, overlapRatio(candidate, placed)),
+            0,
+          );
+          if (!best || worstOverlap < best.worstOverlap) best = { ...candidate, worstOverlap };
+          if (worstOverlap <= maxOverlapRatio) break;
+        }
+        state.x = best?.x ?? 0;
+        state.y = best?.y ?? 0;
+      });
+    };
+
+    const solveCollisions = () => {
+      for (let pass = 0; pass < 3; pass += 1) {
+        for (let i = 0; i < states.length; i += 1) {
+          for (let j = i + 1; j < states.length; j += 1) {
+            const a = states[i];
+            const b = states[j];
+            const dx = b.x - a.x;
+            const dy = b.y - a.y;
+            const overlapX = Math.max(0, tileWidth - Math.abs(dx));
+            const overlapY = Math.max(0, tileHeight - Math.abs(dy));
+            if (!overlapX || !overlapY) continue;
+            const ratio = overlapX * overlapY / (tileWidth * tileHeight);
+            if (ratio <= maxOverlapRatio) continue;
+
+            const targetOverlapX = maxOverlapRatio * tileWidth * tileHeight / overlapY;
+            const targetOverlapY = maxOverlapRatio * tileWidth * tileHeight / overlapX;
+            const pushX = overlapX - targetOverlapX;
+            const pushY = overlapY - targetOverlapY;
+
+            if (pushX <= pushY) {
+              const direction = dx === 0 ? (i % 2 ? 1 : -1) : Math.sign(dx);
+              a.x -= direction * pushX / 2;
+              b.x += direction * pushX / 2;
+              a.vx *= -0.72;
+              b.vx *= -0.72;
+            } else {
+              const direction = dy === 0 ? (j % 2 ? 1 : -1) : Math.sign(dy);
+              a.y -= direction * pushY / 2;
+              b.y += direction * pushY / 2;
+              a.vy *= -0.72;
+              b.vy *= -0.72;
+            }
+          }
+        }
+      }
+    };
+
+    const keepInBounds = (state) => {
+      const boundX = Math.max(0, (stage.clientWidth - tileWidth) / 2);
+      const boundY = Math.max(0, (stage.clientHeight - tileHeight) / 2);
+      if (state.x < -boundX || state.x > boundX) {
+        state.x = Math.max(-boundX, Math.min(boundX, state.x));
+        state.vx *= -1;
+      }
+      if (state.y < -boundY || state.y > boundY) {
+        state.y = Math.max(-boundY, Math.min(boundY, state.y));
+        state.vy *= -1;
+      }
+    };
+
+    const keepMoving = (state) => {
+      const speed = Math.hypot(state.vx, state.vy);
+      if (speed >= 7) return;
+      const multiplier = 7 / Math.max(speed, 0.1);
+      state.vx *= multiplier;
+      state.vy *= multiplier;
+    };
 
     const setActive = (item) => {
-      if (active === item) return;
-      if (!active) elapsedBeforePause = elapsed(performance.now());
       active = item;
       root.classList.toggle('is-focused', Boolean(active));
       items.forEach((candidate) => candidate.classList.toggle('is-active', candidate === active));
     };
 
-    const resume = () => {
-      if (!active) return;
-      active = null;
-      runStartedAt = performance.now();
-      root.classList.remove('is-focused');
-      items.forEach((item) => item.classList.remove('is-active'));
-    };
+    const resume = () => setActive(null);
 
     const layout = (now) => {
-      const width = stage.clientWidth;
-      const height = stage.clientHeight;
-      const time = reducedMotion.matches ? 0 : elapsed(now);
+      const delta = Math.min((now - previousTime) / 1000, 0.04);
+      previousTime = now;
+
+      if (!active && !reducedMotion.matches) {
+        states.forEach((state, index) => {
+          const wander = Math.sin(now * 0.00018 + state.phase) * 0.045;
+          const cos = Math.cos(wander);
+          const sin = Math.sin(wander);
+          const vx = state.vx * cos - state.vy * sin;
+          const vy = state.vx * sin + state.vy * cos;
+          state.vx = vx;
+          state.vy = vy;
+          state.x += state.vx * delta;
+          state.y += state.vy * delta;
+          keepInBounds(state);
+        });
+        solveCollisions();
+        states.forEach((state) => {
+          keepInBounds(state);
+          keepMoving(state);
+        });
+        solveCollisions();
+        states.forEach(keepInBounds);
+      }
 
       items.forEach((item, index) => {
         if (item === active) {
           item.style.setProperty('--orbit-x', '0px');
           item.style.setProperty('--orbit-y', '0px');
-          item.style.setProperty('--orbit-scale', '1');
           item.style.zIndex = '100';
-          return;
+        } else {
+          item.style.setProperty('--orbit-x', `${states[index].x.toFixed(2)}px`);
+          item.style.setProperty('--orbit-y', `${states[index].y.toFixed(2)}px`);
+          item.style.zIndex = String(10 + Math.round((states[index].y / stage.clientHeight + 0.5) * 30));
         }
-
-        const path = paths[index];
-        const x = path.homeX * width * 0.5
-          + Math.sin(time * path.speedX + path.phaseX) * width * path.driftX
-          + Math.sin(time * path.speedY * 0.47 + path.phaseY) * width * 0.035;
-        const y = path.homeY * height * 0.5
-          + Math.cos(time * path.speedY + path.phaseY) * height * path.driftY
-          + Math.sin(time * path.speedX * 0.61 + path.phaseX) * height * 0.04;
-        const scale = path.scale + Math.sin(time * 0.00032 + path.pulse) * 0.07;
-        item.style.setProperty('--orbit-x', `${x.toFixed(2)}px`);
-        item.style.setProperty('--orbit-y', `${y.toFixed(2)}px`);
-        item.style.setProperty('--orbit-scale', (scale * (active ? 0.82 : 1)).toFixed(3));
-        item.style.zIndex = String(10 + Math.round((y / height + 0.5) * 30));
       });
 
       animationFrame = requestAnimationFrame(layout);
@@ -119,13 +216,15 @@
     root.addEventListener('focusout', (event) => {
       if (!root.contains(event.relatedTarget)) resume();
     });
-    reducedMotion.addEventListener?.('change', () => {
-      elapsedBeforePause = 0;
-      runStartedAt = performance.now();
-    });
 
+    const observer = new ResizeObserver(placeItems);
+    observer.observe(stage);
+    placeItems();
     animationFrame = requestAnimationFrame(layout);
-    window.addEventListener('pagehide', () => cancelAnimationFrame(animationFrame), { once: true });
+    window.addEventListener('pagehide', () => {
+      cancelAnimationFrame(animationFrame);
+      observer.disconnect();
+    }, { once: true });
   });
 })();
 </script>

@@ -111,6 +111,7 @@ code, kbd, pre, samp,
 .ukant-orbit {
   --orbit-border: rgba(11, 11, 12, 0.2);
   --orbit-shadow: rgba(11, 11, 12, 0.2);
+  --tile-width: 176px;
   position: relative;
   width: 100%;
   max-width: 1180px;
@@ -125,15 +126,14 @@ code, kbd, pre, samp,
 .ukant-orbit__item {
   --orbit-x: 0px;
   --orbit-y: 0px;
-  --orbit-scale: 0.7;
   position: absolute;
   top: 50%;
   left: 50%;
   display: block;
-  width: clamp(108px, 14vw, 176px);
+  width: var(--tile-width);
   aspect-ratio: 4 / 3;
   opacity: 1;
-  transform: translate(-50%, -50%) translate(var(--orbit-x), var(--orbit-y)) scale(var(--orbit-scale));
+  transform: translate(-50%, -50%) translate(var(--orbit-x), var(--orbit-y));
   transform-origin: center;
   outline: none;
   will-change: transform, opacity;
@@ -182,7 +182,6 @@ code, kbd, pre, samp,
 
 @media (max-width: 767px) {
   .ukant-orbit { height: 430px; margin-block: -2rem -1rem; }
-  .ukant-orbit__item { width: clamp(92px, 30vw, 132px); }
   .ukant-orbit__item.is-active { width: 88vw; }
 }
 
