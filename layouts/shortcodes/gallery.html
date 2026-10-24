@@ -20,7 +20,8 @@
         data-fancybox="ukant-album-{{ $item.album.id }}"
         data-options='{"loop":true,"infobar":false,"buttons":["close"],"thumbs":{"autoStart":false},"slideShow":{"autoStart":false}}'
         aria-label="Open photo {{ add $index 1 }} of {{ len $items }} from {{ $item.album.title }}">
-        <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy" decoding="async">
+        <img class="ukant-orbit__blur" src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="ukant-orbit__photo" src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy" decoding="async">
       </a>
     {{ end }}
   </div>
@@ -79,7 +80,7 @@
         state.height = state.width / state.aspect;
         items[index].style.setProperty('--tile-width', `${state.width.toFixed(2)}px`);
         items[index].style.setProperty('--tile-height', `${state.height.toFixed(2)}px`);
-        items[index].style.setProperty('--halo-size', `${Math.max(3, state.width * 0.025).toFixed(2)}px`);
+        items[index].style.setProperty('--blur-size', `${Math.max(3, state.width * 0.05).toFixed(2)}px`);
         const boundX = Math.max(0, (width - state.width) / 2);
         const boundY = Math.max(0, (height - state.height) / 2);
         let best = null;
@@ -202,7 +203,9 @@
           const mobile = window.innerWidth <= 767;
           const maxWidth = window.innerWidth * (mobile ? 0.88 : 0.68);
           const maxHeightWidth = window.innerHeight * 0.72 * states[index].aspect;
-          item.style.setProperty('--active-width', `${Math.min(maxWidth, 820, maxHeightWidth).toFixed(2)}px`);
+          const activeWidth = Math.min(maxWidth, 820, maxHeightWidth);
+          item.style.setProperty('--active-width', `${activeWidth.toFixed(2)}px`);
+          item.style.setProperty('--active-blur-size', `${Math.max(3, activeWidth * 0.05).toFixed(2)}px`);
           item.style.setProperty('--orbit-x', '0px');
           item.style.setProperty('--orbit-y', '0px');
           item.style.zIndex = '100';

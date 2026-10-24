@@ -109,8 +109,6 @@ code, kbd, pre, samp,
 // 4. Gallery: continuously moving circular cluster
 // =============================================================================
 .ukant-orbit {
-  --orbit-halo: rgba(92, 92, 98, 0.42);
-  --orbit-halo-focus: rgba(92, 92, 98, 0.58);
   --tile-width: 176px;
   --tile-height: 132px;
   position: relative;
@@ -134,6 +132,7 @@ code, kbd, pre, samp,
   width: var(--tile-width);
   height: var(--tile-height);
   opacity: 1;
+  isolation: isolate;
   transform: translate(-50%, -50%) translate(var(--orbit-x), var(--orbit-y));
   transform-origin: center;
   outline: none;
@@ -141,7 +140,8 @@ code, kbd, pre, samp,
   transition: width 320ms ease-out, height 320ms ease-out, filter 220ms ease-out;
 }
 
-.ukant-orbit__item img {
+.ukant-orbit__photo,
+.ukant-orbit__blur {
   display: block;
   width: 100%;
   height: 100%;
@@ -149,8 +149,22 @@ code, kbd, pre, samp,
   border: 0;
   border-radius: 2px;
   background: transparent;
-  filter: drop-shadow(0 0 var(--halo-size, 4px) var(--orbit-halo));
-  transition: filter 220ms ease-out;
+}
+
+.ukant-orbit__photo {
+  position: relative;
+  z-index: 1;
+}
+
+.ukant-orbit__blur {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.58;
+  filter: blur(var(--blur-size, 5px));
+  transform: scale(0.98);
+  pointer-events: none;
+  transition: filter 220ms ease-out, opacity 220ms ease-out;
 }
 
 .ukant-orbit__item.is-active {
@@ -158,16 +172,18 @@ code, kbd, pre, samp,
   height: auto;
 }
 
-.ukant-orbit__item.is-active img {
+.ukant-orbit__item.is-active .ukant-orbit__photo,
+.ukant-orbit__item.is-active .ukant-orbit__blur {
   height: auto;
   max-height: 72vh;
   object-fit: contain;
 }
 
-.ukant-orbit__item:hover img,
-.ukant-orbit__item:focus-visible img,
-.ukant-orbit__item.is-active img {
-  filter: drop-shadow(0 0 calc(var(--halo-size, 4px) + 5px) var(--orbit-halo-focus));
+.ukant-orbit__item:hover .ukant-orbit__blur,
+.ukant-orbit__item:focus-visible .ukant-orbit__blur,
+.ukant-orbit__item.is-active .ukant-orbit__blur {
+  opacity: 0.68;
+  filter: blur(var(--active-blur-size, var(--blur-size, 5px)));
 }
 
 .ukant-orbit__item:focus-visible { outline: 3px solid var(--ukant-orange); outline-offset: 7px; }
@@ -314,8 +330,4 @@ blockquote {
     box-shadow: 0 4px 16px rgba(255, 90, 31, 0.2);
   }
 
-  .ukant-orbit {
-    --orbit-halo: rgba(176, 176, 184, 0.38);
-    --orbit-halo-focus: rgba(196, 196, 204, 0.54);
-  }
 }
