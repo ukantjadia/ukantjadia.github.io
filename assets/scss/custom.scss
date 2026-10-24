@@ -106,7 +106,153 @@ code, kbd, pre, samp,
 }
 
 // =============================================================================
-// 4. UKANT wordmark: strikethrough-T accent (only when the .ukant-mark class is used)
+// 4. Gallery: fixed-height album stacks
+// =============================================================================
+// Album content and ordering live in data/albums.yaml. Adding images to an album
+// never increases the homepage height; the remaining images open in Fancybox.
+.ukant-gallery {
+  --gallery-border: rgba(11, 11, 12, 0.16);
+  --gallery-surface: #fff;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.ukant-gallery__rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding: 1.6rem 0.75rem 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ukant-orange) transparent;
+}
+
+.ukant-gallery__album {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.ukant-gallery__stack {
+  position: relative;
+  display: block;
+  width: Min(100%, 300px);
+  aspect-ratio: 4 / 3;
+  margin: 0 auto 1.2rem;
+  color: inherit;
+  outline: none;
+}
+
+.ukant-gallery__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid var(--gallery-border);
+  border-radius: 2px;
+  background: var(--gallery-surface);
+  box-shadow: 0 12px 34px rgba(11, 11, 12, 0.12);
+  transition: transform 200ms ease-out, border-color 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.ukant-gallery__photo--1 { z-index: 3; transform: rotate(-1deg); }
+.ukant-gallery__photo--2 { z-index: 2; transform: rotate(3.5deg); }
+.ukant-gallery__photo--3 { z-index: 1; transform: rotate(-4deg); }
+
+.ukant-gallery__stack:hover .ukant-gallery__photo--1,
+.ukant-gallery__stack:focus-visible .ukant-gallery__photo--1 {
+  transform: translateY(-8px) rotate(-2deg);
+  border-color: var(--ukant-orange);
+  box-shadow: 0 18px 42px rgba(255, 90, 31, 0.16);
+}
+
+.ukant-gallery__stack:hover .ukant-gallery__photo--2,
+.ukant-gallery__stack:focus-visible .ukant-gallery__photo--2 { transform: translate(18px, 2px) rotate(5deg); }
+
+.ukant-gallery__stack:hover .ukant-gallery__photo--3,
+.ukant-gallery__stack:focus-visible .ukant-gallery__photo--3 { transform: translate(-18px, 4px) rotate(-6deg); }
+
+.ukant-gallery__stack:focus-visible {
+  outline: 3px solid var(--ukant-orange);
+  outline-offset: 8px;
+}
+
+.ukant-gallery__open {
+  position: absolute;
+  z-index: 4;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.42rem 0.68rem;
+  border-radius: 2px;
+  background: var(--ukant-orange);
+  color: var(--ukant-ink);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 160ms ease-out, transform 160ms ease-out;
+}
+
+.ukant-gallery__stack:hover .ukant-gallery__open,
+.ukant-gallery__stack:focus-visible .ukant-gallery__open { opacity: 1; transform: translateY(0); }
+
+.ukant-gallery__hidden { display: none; }
+
+.ukant-gallery__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  width: Min(100%, 300px);
+  margin: 0 auto;
+}
+
+.ukant-gallery__index {
+  color: var(--ukant-orange-text);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.75rem;
+}
+
+.ukant-gallery__meta h3 { margin: 0; font-size: clamp(1.08rem, 2vw, 1.28rem); line-height: 1.15; }
+
+.ukant-gallery__meta p,
+.ukant-gallery__hint { margin: 0.22rem 0 0; color: var(--ukant-gray); font-size: 0.82rem; }
+
+.ukant-gallery__hint {
+  padding: 0.65rem 0.75rem 0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .ukant-gallery__rail {
+    grid-auto-columns: 82vw;
+    gap: 1.15rem;
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    scroll-padding-inline: 1rem;
+  }
+
+  .ukant-gallery__stack { width: 100%; }
+  .ukant-gallery__open { opacity: 1; transform: none; }
+  .ukant-gallery__hint { padding-inline: 0; text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ukant-gallery__rail { scroll-behavior: auto; }
+  .ukant-gallery__photo,
+  .ukant-gallery__open { transition: none; }
+  .ukant-gallery__stack:hover .ukant-gallery__photo,
+  .ukant-gallery__stack:focus-visible .ukant-gallery__photo { transform: none; }
+}
+
+// =============================================================================
+// 5. UKANT wordmark: strikethrough-T accent (only when the .ukant-mark class is used)
 // =============================================================================
 .navbar-brand,
 .site-title {
@@ -130,7 +276,7 @@ code, kbd, pre, samp,
 }
 
 // =============================================================================
-// 5. Emphasis: numbers should pop
+// 6. Emphasis: numbers should pop
 // =============================================================================
 strong, b {
   font-weight: 600;
@@ -142,7 +288,7 @@ strong, b {
 }
 
 // =============================================================================
-// 6. Sections and cards
+// 7. Sections and cards
 // =============================================================================
 .home-section,
 section.wg-about,
@@ -165,7 +311,7 @@ section.wg-collection {
 }
 
 // =============================================================================
-// 7. Quote / tagline
+// 8. Quote / tagline
 // =============================================================================
 blockquote {
   border-left: 3px solid var(--ukant-orange);
@@ -181,7 +327,7 @@ blockquote {
 }
 
 // =============================================================================
-// 8. Dark mode
+// 9. Dark mode
 // =============================================================================
 .dark,
 [data-theme="dark"] {
@@ -230,4 +376,14 @@ blockquote {
   .card:hover {
     box-shadow: 0 4px 16px rgba(255, 90, 31, 0.2);
   }
+
+  .ukant-gallery {
+    --gallery-border: rgba(255, 255, 255, 0.22);
+    --gallery-surface: #151517;
+  }
+
+  .ukant-gallery__photo { box-shadow: 0 14px 38px rgba(0, 0, 0, 0.42); }
+  .ukant-gallery__index { color: var(--ukant-orange-soft); }
+  .ukant-gallery__meta p,
+  .ukant-gallery__hint { color: rgba(255, 255, 255, 0.64); }
 }

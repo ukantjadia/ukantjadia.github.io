@@ -1,0 +1,76 @@
+{{/*
+  Album-stack gallery for the homepage.
+
+  Content lives in assets/media/albums/<album-id>/.
+  Album titles, order, descriptions, and covers live in data/albums.yaml.
+  Adding photos never increases the homepage section height because only three
+  preview images are rendered visibly. Every image still joins the Fancybox group.
+*/}}
+{{ $page := .Page }}
+{{ $page.Store.Set "has_gallery" true }}
+
+<div class="ukant-gallery" aria-label="Photo albums">
+  <div class="ukant-gallery__rail">
+    {{ range $albumIndex, $album := site.Data.albums.albums }}
+      {{ $pattern := printf "media/albums/%s/*" $album.id }}
+      {{ $images := sort (resources.Match $pattern) "Name" }}
+      {{ if gt (len $images) 0 }}
+        {{ $cover := index $images 0 }}
+        {{ with $album.cover }}
+          {{ with resources.Get (printf "media/albums/%s/%s" $album.id .) }}
+            {{ $cover = . }}
+          {{ end }}
+        {{ end }}
+        {{ $previewImages := first 3 (slice $cover | append (where $images "Name" "ne" $cover.Name)) }}
+        {{ $group := printf "ukant-album-%s" $album.id }}
+
+        <article class="ukant-gallery__album">
+          <a
+            class="ukant-gallery__stack"
+            href="{{ ($cover.Fit "1600x1600 webp q82").RelPermalink }}"
+            data-fancybox="{{ $group }}"
+            data-caption="{{ $album.title }}"
+            aria-label="Open {{ $album.title }} album, {{ len $images }} photos"
+          >
+            {{ range $previewIndex, $image := $previewImages }}
+              {{ $thumb := $image.Fill "560x420 webp q80 Center" }}
+              <img
+                class="ukant-gallery__photo ukant-gallery__photo--{{ add $previewIndex 1 }}"
+                src="{{ $thumb.RelPermalink }}"
+                width="{{ $thumb.Width }}"
+                height="{{ $thumb.Height }}"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              >
+            {{ end }}
+            <span class="ukant-gallery__open" aria-hidden="true">View album</span>
+          </a>
+
+          {{ range $image := $images }}
+            {{ if ne $image.Name $cover.Name }}
+              {{ $viewer := $image.Fit "1600x1600 webp q82" }}
+              <a
+                class="ukant-gallery__hidden"
+                href="{{ $viewer.RelPermalink }}"
+                data-fancybox="{{ $group }}"
+                data-caption="{{ $album.title }}"
+                tabindex="-1"
+                aria-hidden="true"
+              ></a>
+            {{ end }}
+          {{ end }}
+
+          <div class="ukant-gallery__meta">
+            <span class="ukant-gallery__index" aria-hidden="true">{{ printf "%02d" (add $albumIndex 1) }}</span>
+            <div>
+              <h3>{{ $album.title }}</h3>
+              <p>{{ len $images }} moments</p>
+            </div>
+          </div>
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+  <p class="ukant-gallery__hint">Swipe or drag to explore. Open a stack to see every photo.</p>
+</div>

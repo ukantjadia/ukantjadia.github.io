@@ -1,0 +1,19 @@
+# Homepage gallery albums.
+#
+# To add a new album:
+# 1. Create assets/media/albums/<id>/ and add WebP, JPG, or PNG images.
+# 2. Add one entry below. The first image by filename is used when `cover` is omitted.
+# 3. Keep titles short enough to fit on one line on a phone.
+albums:
+  - id: milestones
+    title: Milestones
+    description: Awards, certifications, and moments that moved the work forward.
+    cover: hackathon-winner.webp
+  - id: research-stage
+    title: Research & Stage
+    description: Papers, presentations, and the rooms where ideas became public.
+    cover: team-on-stage.webp
+  - id: people-events
+    title: People & Events
+    description: The teams, halls, and unplanned frames around the work.
+    cover: event-group-01.webp
