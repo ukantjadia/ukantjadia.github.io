@@ -1,76 +1,114 @@
-{{/*
-  Album-stack gallery for the homepage.
+{{/* Circular moving gallery. Albums remain folders and Fancybox groups by album. */}}
+{{ .Page.Store.Set "has_gallery" true }}
+{{ $items := slice }}
+{{ range $album := site.Data.albums.albums }}
+  {{ $pattern := printf "media/albums/%s/*" $album.id }}
+  {{ range sort (resources.Match $pattern) "Name" }}
+    {{ $items = $items | append (dict "image" . "album" $album) }}
+  {{ end }}
+{{ end }}
 
-  Content lives in assets/media/albums/<album-id>/.
-  Album titles, order, descriptions, and covers live in data/albums.yaml.
-  Adding photos never increases the homepage section height because only three
-  preview images are rendered visibly. Every image still joins the Fancybox group.
-*/}}
-{{ $page := .Page }}
-{{ $page.Store.Set "has_gallery" true }}
-
-<div class="ukant-gallery" aria-label="Photo albums">
-  <div class="ukant-gallery__rail">
-    {{ range $albumIndex, $album := site.Data.albums.albums }}
-      {{ $pattern := printf "media/albums/%s/*" $album.id }}
-      {{ $images := sort (resources.Match $pattern) "Name" }}
-      {{ if gt (len $images) 0 }}
-        {{ $cover := index $images 0 }}
-        {{ with $album.cover }}
-          {{ with resources.Get (printf "media/albums/%s/%s" $album.id .) }}
-            {{ $cover = . }}
-          {{ end }}
-        {{ end }}
-        {{ $previewImages := first 3 (slice $cover | append (where $images "Name" "ne" $cover.Name)) }}
-        {{ $group := printf "ukant-album-%s" $album.id }}
-
-        <article class="ukant-gallery__album">
-          <a
-            class="ukant-gallery__stack"
-            href="{{ ($cover.Fit "1600x1600 webp q82").RelPermalink }}"
-            data-fancybox="{{ $group }}"
-            data-caption="{{ $album.title }}"
-            aria-label="Open {{ $album.title }} album, {{ len $images }} photos"
-          >
-            {{ range $previewIndex, $image := $previewImages }}
-              {{ $thumb := $image.Fill "560x420 webp q80 Center" }}
-              <img
-                class="ukant-gallery__photo ukant-gallery__photo--{{ add $previewIndex 1 }}"
-                src="{{ $thumb.RelPermalink }}"
-                width="{{ $thumb.Width }}"
-                height="{{ $thumb.Height }}"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              >
-            {{ end }}
-            <span class="ukant-gallery__open" aria-hidden="true">View album</span>
-          </a>
-
-          {{ range $image := $images }}
-            {{ if ne $image.Name $cover.Name }}
-              {{ $viewer := $image.Fit "1600x1600 webp q82" }}
-              <a
-                class="ukant-gallery__hidden"
-                href="{{ $viewer.RelPermalink }}"
-                data-fancybox="{{ $group }}"
-                data-caption="{{ $album.title }}"
-                tabindex="-1"
-                aria-hidden="true"
-              ></a>
-            {{ end }}
-          {{ end }}
-
-          <div class="ukant-gallery__meta">
-            <span class="ukant-gallery__index" aria-hidden="true">{{ printf "%02d" (add $albumIndex 1) }}</span>
-            <div>
-              <h3>{{ $album.title }}</h3>
-              <p>{{ len $images }} moments</p>
-            </div>
-          </div>
-        </article>
-      {{ end }}
+<div class="ukant-orbit" data-ukant-orbit aria-label="Moving photo gallery">
+  <div class="ukant-orbit__stage">
+    {{ range $index, $item := $items }}
+      {{ $thumb := $item.image.Fill "440x330 webp q78 Center" }}
+      {{ $viewer := $item.image.Fit "1600x1600 webp q82" }}
+      <a class="ukant-orbit__item"
+        href="{{ $viewer.RelPermalink }}"
+        data-fancybox="ukant-album-{{ $item.album.id }}"
+        data-options='{"loop":true,"infobar":false,"buttons":["close"],"thumbs":{"autoStart":false},"slideShow":{"autoStart":false}}'
+        aria-label="Open photo {{ add $index 1 }} of {{ len $items }} from {{ $item.album.title }}">
+        <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy" decoding="async">
+      </a>
     {{ end }}
   </div>
-  <p class="ukant-gallery__hint">Swipe or drag to explore. Open a stack to see every photo.</p>
 </div>
+
+<script>
+(() => {
+  document.querySelectorAll('[data-ukant-orbit]:not([data-orbit-ready])').forEach((root) => {
+    root.dataset.orbitReady = 'true';
+    const stage = root.querySelector('.ukant-orbit__stage');
+    const items = Array.from(root.querySelectorAll('.ukant-orbit__item'));
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let active = null;
+    let elapsedBeforePause = 0;
+    let runStartedAt = performance.now();
+    let animationFrame = 0;
+
+    const elapsed = (now) => active ? elapsedBeforePause : elapsedBeforePause + now - runStartedAt;
+
+    const setActive = (item) => {
+      if (active === item) return;
+      if (!active) elapsedBeforePause = elapsed(performance.now());
+      active = item;
+      root.classList.toggle('is-focused', Boolean(active));
+      items.forEach((candidate) => candidate.classList.toggle('is-active', candidate === active));
+    };
+
+    const resume = () => {
+      if (!active) return;
+      active = null;
+      runStartedAt = performance.now();
+      root.classList.remove('is-focused');
+      items.forEach((item) => item.classList.remove('is-active'));
+    };
+
+    const layout = (now) => {
+      const width = stage.clientWidth;
+      const height = stage.clientHeight;
+      const radiusX = Math.min(width * 0.39, 470) * (active ? 1.08 : 1);
+      const radiusY = Math.min(height * 0.31, 185) * (active ? 1.1 : 1);
+      const rotation = reducedMotion.matches ? 0 : elapsed(now) / 46000 * Math.PI * 2;
+
+      items.forEach((item, index) => {
+        if (item === active) {
+          item.style.setProperty('--orbit-x', '0px');
+          item.style.setProperty('--orbit-y', '0px');
+          item.style.setProperty('--orbit-scale', '1.45');
+          item.style.setProperty('--orbit-opacity', '1');
+          item.style.zIndex = '100';
+          return;
+        }
+
+        const angle = rotation + index / items.length * Math.PI * 2;
+        const depth = (Math.sin(angle) + 1) / 2;
+        const x = Math.cos(angle) * radiusX;
+        const y = Math.sin(angle) * radiusY;
+        const scale = (0.58 + depth * 0.44) * (active ? 0.78 : 1);
+        item.style.setProperty('--orbit-x', `${x.toFixed(2)}px`);
+        item.style.setProperty('--orbit-y', `${y.toFixed(2)}px`);
+        item.style.setProperty('--orbit-scale', scale.toFixed(3));
+        item.style.setProperty('--orbit-opacity', active ? '0.34' : (0.5 + depth * 0.5).toFixed(3));
+        item.style.zIndex = String(10 + Math.round(depth * 40));
+      });
+
+      animationFrame = requestAnimationFrame(layout);
+    };
+
+    items.forEach((item) => {
+      item.addEventListener('pointerenter', () => setActive(item));
+      item.addEventListener('focus', () => setActive(item));
+      item.addEventListener('click', (event) => {
+        if (event.pointerType === 'touch' && active !== item) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          setActive(item);
+        }
+      }, true);
+    });
+
+    root.addEventListener('pointerleave', resume);
+    root.addEventListener('focusout', (event) => {
+      if (!root.contains(event.relatedTarget)) resume();
+    });
+    reducedMotion.addEventListener?.('change', () => {
+      elapsedBeforePause = 0;
+      runStartedAt = performance.now();
+    });
+
+    animationFrame = requestAnimationFrame(layout);
+    window.addEventListener('pagehide', () => cancelAnimationFrame(animationFrame), { once: true });
+  });
+})();
+</script>
